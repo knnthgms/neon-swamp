@@ -25,6 +25,7 @@ const ContentSection: React.FC<ContentSectionProps> & {
         justify={layout === "middle" ? "center" : "space-between"}
         align="middle"
         style={{ flexDirection: layout === "right" ? "row-reverse" : "row" }}
+        gutter={[20, 24]}
       >
         {children}
       </Row>

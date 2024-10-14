@@ -17,6 +17,8 @@ const App = () => (
             sizeUnit: 5,
             borderRadius: 1,
             fontSize: 15,
+            colorTextHeading: "#18216d",
+            colorText: "#18216d",
           },
         }}
       >

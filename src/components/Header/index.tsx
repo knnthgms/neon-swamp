@@ -71,7 +71,7 @@ const Header = () => {
   };
 
   return (
-    <Slide direction="down">
+    <Slide direction="down" triggerOnce>
       <HeaderSection>
         <Container>
           <Row justify="space-between">

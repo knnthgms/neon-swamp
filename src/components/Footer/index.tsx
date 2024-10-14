@@ -21,10 +21,7 @@ const Footer = () => {
   return (
     <FooterSection>
       <Row justify="center">
-        <Col lg={11} md={11} sm={24} xs={24}>
-          <NavLink to="/">
-            <NameLogo />
-          </NavLink>
+        <Col>
           <NavLink to="mailto:knnthgms@gmail.com">
             <Chat>{t(`Email me`)}</Chat>
           </NavLink>
@@ -51,6 +48,9 @@ const Footer = () => {
               <LinkedinOutlined />
             </a>
           </FooterContainer>
+          <NavLink to="/">
+            <NameLogo />
+          </NavLink>
         </Col>
       </Row>
     </FooterSection>

@@ -67,16 +67,18 @@ const Home = () => {
           <Slide direction="right" triggerOnce>
             <TextWithTitle
               title="Skills"
-              content="
-            • React, React Native, TypeScript
-            • Redux, Context API, Redux Saga
-            • i18n for multi-language support
-            • Firebase, CodePush, AppCenter integration
-            • Data flow architecture and app scalability
-            • Performance optimization (React.memo, useMemo, useCallback)
-            • AWS-hosted self-executing scripts
-            • Unity Engine for cloud automation
-            "
+              content={
+                <ul>
+                  <li>React, React Native, TypeScript </li>
+                  <li>Redux, Context API, Redux Saga </li>
+                  <li>i18n for multi-language support </li>
+                  <li>Firebase, CodePush, AppCenter integration </li>
+                  <li>Data flow architecture and app scalability </li>
+                  <li>Performance optimization</li>
+                  <li>AWS-hosted self-executing scripts </li>
+                  <li>Unity Engine for cloud automation</li>
+                </ul>
+              }
             />
           </Slide>
         </ContentSection.Block>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Typography } from "antd";
+import { ReactNode } from "react";
 const { Text, Title } = Typography;
 
 const Container = styled("div")`
@@ -8,7 +9,7 @@ const Container = styled("div")`
 
 interface Props {
   title: string;
-  content: string;
+  content: string | ReactNode;
 }
 
 const TextWithTitle = ({ title, content }: Props) => {

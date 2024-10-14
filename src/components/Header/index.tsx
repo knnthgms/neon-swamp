@@ -1,10 +1,10 @@
-import { Row, Col, Drawer } from "antd";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Row, Col, Drawer, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import Container from "../../common/Container";
-import { Button } from "antd";
 import {
   HeaderSection,
-  LogoContainer,
   Burger,
   NotHidden,
   Menu,
@@ -15,19 +15,20 @@ import {
   CrossOutline,
 } from "./styles";
 import NameLogo from "../NameLogo";
-import { useToggle } from "../../hooks";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const { t } = useTranslation();
-  const [showDrawer, toggleDrawer] = useToggle(false);
+  const [showDrawer, setShowDrawer] = useState(false);
+
+  const displayDrawer = () => setShowDrawer(true);
+  const hideDrawer = () => setShowDrawer(false);
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
       behavior: "smooth",
     });
-    toggleDrawer();
+    hideDrawer();
   };
 
   const menuItems = [
@@ -74,13 +75,13 @@ const Header = () => {
           <NotHidden>
             <MenuItems />
           </NotHidden>
-          <Burger onClick={toggleDrawer}>
+          <Burger onClick={() => setShowDrawer(true)}>
             <HamburgerOutline />
           </Burger>
         </Row>
-        <Drawer closable={false} open={showDrawer} onClose={toggleDrawer}>
+        <Drawer closable={false} open={showDrawer} onClose={hideDrawer}>
           <Col style={{ marginBottom: "2.5rem" }}>
-            <Label onClick={toggleDrawer}>
+            <Label onClick={displayDrawer}>
               <Col span={12}>
                 <Menu>Menu</Menu>
               </Col>

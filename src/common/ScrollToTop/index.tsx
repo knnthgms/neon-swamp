@@ -23,12 +23,8 @@ const ScrollToTop = () => {
   }, [checkScrollTop]);
 
   const scrollUp = () => {
-    const element = document.getElementById("intro") as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
+    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Drawer, Button } from "antd";
 import { useTranslation } from "react-i18next";
+import { Slide } from "react-awesome-reveal";
 import Container from "../../common/Container";
 import {
   HeaderSection,
@@ -66,34 +67,36 @@ const Header = () => {
   };
 
   return (
-    <HeaderSection>
-      <Container>
-        <Row justify="space-between">
-          <Link to="/" aria-label="homepage">
-            <NameLogo />
-          </Link>
-          <NotHidden>
+    <Slide direction="down">
+      <HeaderSection>
+        <Container>
+          <Row justify="space-between">
+            <Link to="/" aria-label="homepage">
+              <NameLogo />
+            </Link>
+            <NotHidden>
+              <MenuItems />
+            </NotHidden>
+            <Burger onClick={() => setShowDrawer(true)}>
+              <HamburgerOutline />
+            </Burger>
+          </Row>
+          <Drawer closable={false} open={showDrawer} onClose={hideDrawer}>
+            <Col style={{ marginBottom: "2.5rem" }}>
+              <Label onClick={displayDrawer}>
+                <Col span={12}>
+                  <Menu>Menu</Menu>
+                </Col>
+                <Col span={12}>
+                  <CrossOutline />
+                </Col>
+              </Label>
+            </Col>
             <MenuItems />
-          </NotHidden>
-          <Burger onClick={() => setShowDrawer(true)}>
-            <HamburgerOutline />
-          </Burger>
-        </Row>
-        <Drawer closable={false} open={showDrawer} onClose={hideDrawer}>
-          <Col style={{ marginBottom: "2.5rem" }}>
-            <Label onClick={displayDrawer}>
-              <Col span={12}>
-                <Menu>Menu</Menu>
-              </Col>
-              <Col span={12}>
-                <CrossOutline />
-              </Col>
-            </Label>
-          </Col>
-          <MenuItems />
-        </Drawer>
-      </Container>
-    </HeaderSection>
+          </Drawer>
+        </Container>
+      </HeaderSection>
+    </Slide>
   );
 };
 

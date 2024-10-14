@@ -8,7 +8,11 @@ type ContentSectionProps = React.ComponentPropsWithoutRef<"section"> & {
 };
 
 const SectionWrapper = styled.section`
-  padding: 4rem 0;
+  padding: 8rem 0;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 4rem 0;
+  }
 `;
 
 const ContentSection: React.FC<ContentSectionProps> & {
@@ -42,14 +46,7 @@ const Center: React.FC<ContentSectionProps> = ({
   ...rest
 }) => {
   return (
-    <Col
-      xs={24}
-      sm={24}
-      md={18}
-      lg={18}
-      style={{ textAlign: "center" }}
-      {...rest}
-    >
+    <Col style={{ textAlign: "center" }} {...rest}>
       {children}
     </Col>
   );

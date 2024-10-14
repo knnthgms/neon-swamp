@@ -13,10 +13,6 @@ const FooterSection = styled("footer")`
   background: rgb(241, 242, 243);
   gap: 2rem;
   padding: 2.5rem;
-  margin-top: 8rem;
-  @media only screen and (max-width: 1024px) {
-    margin-top: 4rem;
-  }
 `;
 
 const Footer = () => {

@@ -51,6 +51,10 @@ const Header = () => {
     },
   ];
 
+  const handleClick = () => {
+    window.open("/assets/KENNETH_GOMES_CV.pdf", "_blank");
+  };
+
   const MenuItems = () => {
     return (
       <>
@@ -59,7 +63,7 @@ const Header = () => {
             <Span>{line.label}</Span>
           </CustomNavLinkSmall>
         ))}
-        <Button size="large" onClick={() => scrollTo("contact")}>
+        <Button size="large" onClick={handleClick}>
           View CV
         </Button>
       </>

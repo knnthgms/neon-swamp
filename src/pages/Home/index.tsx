@@ -2,31 +2,32 @@ import { lazy } from "react";
 import ContentSection from "../../components/ContentSection";
 import TextWithTitle from "../../components/TextWithTitle";
 import { SvgIcon } from "../../common/SvgIcon";
-import { Slide } from "react-awesome-reveal";
+import { Slide, Fade } from "react-awesome-reveal";
+import { Layout } from "antd";
 
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContactForm = lazy(() => import("../../components/ContactForm"));
-const Container = lazy(() => import("../../common/Container"));
 
+const { Content } = Layout;
 const Home = () => {
   return (
-    <Container>
+    <Content>
       <ScrollToTop />
 
       <ContentSection id="intro" layout="left">
         <ContentSection.Block>
-          <Slide direction="right" triggerOnce>
+          <Fade triggerOnce>
             <SvgIcon src="developer.svg" width="100%" height="100%" />
-          </Slide>
+          </Fade>
         </ContentSection.Block>
 
         <ContentSection.Block>
-          <Slide direction="right" triggerOnce>
+          <Fade triggerOnce>
             <TextWithTitle
               title="Hi, I'm Kenneth Gomes"
               content="I'm a Senior Frontend Developer with a strong focus on creating seamless user experiences and solving complex challenges. With experience in React, React Native, and TypeScript, I build applications that are user-focused, scalable, and intuitive."
             />
-          </Slide>
+          </Fade>
         </ContentSection.Block>
       </ContentSection>
 
@@ -84,6 +85,35 @@ const Home = () => {
         </ContentSection.Block>
       </ContentSection>
 
+      <ContentSection id="projects" layout="right">
+        <ContentSection.Block>
+          <Slide direction="left" triggerOnce>
+            <SvgIcon src="product-launch.svg" width="100%" height="100%" />
+          </Slide>
+        </ContentSection.Block>
+        <ContentSection.Block>
+          <Slide direction="left" triggerOnce>
+            <TextWithTitle
+              title="Projects"
+              content={`Some projects I've worked on in the past`}
+            />
+          </Slide>
+        </ContentSection.Block>
+      </ContentSection>
+
+      <ContentSection id="blog" layout="left">
+        <ContentSection.Block>
+          <Slide direction="right" triggerOnce>
+            <SvgIcon src="product-launch.svg" width="100%" height="100%" />
+          </Slide>
+        </ContentSection.Block>
+        <ContentSection.Block>
+          <Slide direction="right" triggerOnce>
+            <TextWithTitle title="blog" content="Coming soon" />
+          </Slide>
+        </ContentSection.Block>
+      </ContentSection>
+
       <ContentSection id="contact" layout="left">
         <ContentSection.Block>
           <Slide direction="left" triggerOnce>
@@ -99,7 +129,7 @@ const Home = () => {
           </Slide>
         </ContentSection.Block>
       </ContentSection>
-    </Container>
+    </Content>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Row, Col } from "antd";
+import { Row, Col, Layout } from "antd";
 import { useTranslation } from "react-i18next";
 import { NavLink, Chat, FooterContainer } from "./styles";
 import NameLogo from "../NameLogo";
@@ -9,13 +9,15 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 
-const FooterSection = styled("footer")`
+const { Footer } = Layout;
+
+const FooterSection = styled(Footer)`
   background: rgb(241, 242, 243);
   gap: 2rem;
   padding: 2.5rem;
 `;
 
-const Footer = () => {
+const CustomFooter = () => {
   const { t } = useTranslation();
 
   return (
@@ -57,4 +59,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default CustomFooter;

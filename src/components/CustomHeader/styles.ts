@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 
 export const HeaderSection = styled("header")`
-  padding: 1rem 0.5rem;
+  // padding: 1rem 0.5rem;
 `;
 
 export const LogoContainer = styled(Link)`
@@ -28,20 +28,27 @@ export const CustomNavLink = styled("div")`
   }
 `;
 
-export const Burger = styled("div")`
-  @media only screen and (max-width: 918px) {
-    display: block;
-  }
-
-  display: none;
-
-  svg {
-    fill: #2e186a;
-  }
+export const HamburgerOutline = styled(MenuOutlined)`
+  font-size: 22px;
 `;
 
-export const NotHidden = styled("div")`
-  @media only screen and (max-width: 918px) {
+export const CrossOutline = styled(CloseOutlined)`
+  font-size: 22px;
+`;
+
+export const SmallScreen = styled("div")`
+  @media only screen and (max-width: 890px) {
+    display: block;
+  }
+  display: none;
+
+  // svg {
+  //   fill: #2e186a;
+  // }
+`;
+
+export const LargeScreen = styled("div")`
+  @media only screen and (max-width: 890px) {
     display: none;
   }
 `;
@@ -70,14 +77,6 @@ export const Label = styled("span")`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-`;
-
-export const HamburgerOutline = styled(MenuOutlined)`
-  font-size: 22px;
-`;
-
-export const CrossOutline = styled(CloseOutlined)`
-  font-size: 22px;
 `;
 
 export const Span = styled("span")`

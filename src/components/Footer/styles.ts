@@ -37,14 +37,4 @@ export const FooterContainer = styled("div")`
   align-items: center;
   transition: all 0.3s ease-in-out;
   font-size: 1.8rem;
-
-  a {
-    &:hover,
-    &:active,
-    &:focus {
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
 `;

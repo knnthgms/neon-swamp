@@ -12,7 +12,6 @@ import {
 const { Footer } = Layout;
 
 const FooterSection = styled(Footer)`
-  background: rgb(241, 242, 243);
   gap: 2rem;
   padding: 2.5rem;
 `;

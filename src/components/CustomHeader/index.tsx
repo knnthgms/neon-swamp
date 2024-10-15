@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { Row, Col, Drawer, Layout } from "antd";
+import { Row, Col, Drawer, Layout, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { SmallScreen, LargeScreen, HamburgerOutline } from "./styles";
+import { SmallScreen, LargeScreen } from "./styles";
 import NameLogo from "../NameLogo";
 import MenuItems from "../MenuItems";
+import { MenuOutlined, MoonOutlined, SunOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 
-const CustomHeader = () => {
+interface HeaderProps {
+  toggleTheme: () => void;
+  isDarkMode: boolean;
+}
+
+const CustomHeader = ({ isDarkMode, toggleTheme }: HeaderProps) => {
   const { t } = useTranslation();
   const [showDrawer, setShowDrawer] = useState(false);
 
@@ -62,14 +68,24 @@ const CustomHeader = () => {
           <Col>
             <NameLogo />
           </Col>
-          <Col>
-            <LargeScreen>
-              <MenuItems items={menuItems} />
-            </LargeScreen>
-            <SmallScreen onClick={displayDrawer}>
-              <HamburgerOutline />
-            </SmallScreen>
-          </Col>
+
+          <Row align="middle" justify="center" gutter={16}>
+            <Button
+              icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
+              size="large"
+              shape="circle"
+              type="text"
+              onClick={toggleTheme}
+            />
+            <Col>
+              <LargeScreen>
+                <MenuItems items={menuItems} />
+              </LargeScreen>
+              <SmallScreen onClick={displayDrawer}>
+                <Button icon={<MenuOutlined />} size="large" />
+              </SmallScreen>
+            </Col>
+          </Row>
         </Row>
         <Drawer title="Menu" closable open={showDrawer} onClose={hideDrawer}>
           <MenuItems items={menuItems} orientation="vertical" />

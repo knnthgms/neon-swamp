@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { SvgIcon } from "../SvgIcon";
 import { ScrollUpContainer } from "./styles";
+import { FloatButton } from "antd";
+import { UpOutlined } from "@ant-design/icons";
 
 const ScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -28,8 +29,8 @@ const ScrollToTop = () => {
   };
 
   return (
-    <ScrollUpContainer onClick={scrollUp} show={showScroll}>
-      <SvgIcon src="scroll-top.svg" width="20px" height="20px" />
+    <ScrollUpContainer show={showScroll}>
+      <FloatButton onClick={scrollUp} icon={<UpOutlined />} />
     </ScrollUpContainer>
   );
 };

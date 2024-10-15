@@ -5,7 +5,7 @@ import { Slide } from "react-awesome-reveal";
 import { SmallScreen, LargeScreen } from "./styles";
 import NameLogo from "../NameLogo";
 import MenuItems from "../MenuItems";
-import { MenuOutlined, MoonOutlined, SunOutlined } from "@ant-design/icons";
+import { MenuOutlined, MoonFilled, SunOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 
@@ -71,8 +71,7 @@ const CustomHeader = ({ isDarkMode, toggleTheme }: HeaderProps) => {
 
           <Row align="middle" justify="center" gutter={16}>
             <Button
-              icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
-              size="large"
+              icon={isDarkMode ? <SunOutlined /> : <MoonFilled />}
               shape="circle"
               type="text"
               onClick={toggleTheme}

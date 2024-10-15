@@ -3,7 +3,7 @@ import { Layout, Spin } from "antd";
 import { Switch, Route } from "react-router-dom";
 import CustomFooter from "../components/Footer";
 import routes from "./config";
-import { GlobalStyles, Styles } from "../styles/styles";
+import { CSSReset, CustomFont, AntdStyles } from "../styles/styles";
 import CustomHeader from "../components/CustomHeader";
 
 interface RouterProps {
@@ -14,8 +14,9 @@ interface RouterProps {
 const Router = ({ isDarkMode, toggleTheme }: RouterProps) => {
   return (
     <Layout>
-      <GlobalStyles />
-      <Styles />
+      <CSSReset />
+      <AntdStyles />
+      <CustomFont />
       <CustomHeader toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <Suspense fallback={<Spin />}>
         <Switch>

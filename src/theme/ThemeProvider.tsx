@@ -1,5 +1,6 @@
 import { createContext, useContext, ReactNode } from "react";
 import { ConfigProvider, theme as antdTheme } from "antd";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useToggle } from "../hooks";
 
 interface ThemeContextType {
@@ -84,9 +85,24 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   const currentTheme = isDarkMode ? draculaDarkMode : lightMode;
 
+  const styledTheme = {
+    isDarkMode,
+    colors: {
+      primary: currentTheme.token.colorPrimary,
+      background: currentTheme.token.colorBgLayout,
+      text: currentTheme.token.colorText,
+      containerBg: currentTheme.token.colorBgContainer,
+      border: currentTheme.token.colorBorder,
+    },
+  };
+
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      <ConfigProvider theme={currentTheme}>{children}</ConfigProvider>
+      <ConfigProvider theme={currentTheme}>
+        <StyledThemeProvider theme={styledTheme}>
+          {children}
+        </StyledThemeProvider>
+      </ConfigProvider>
     </ThemeContext.Provider>
   );
 };

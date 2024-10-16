@@ -6,11 +6,6 @@ export const useToggle = (initialState = false): [boolean, any] => {
   return [state, toggle];
 };
 
-export const useTheme = () => {
-  const [isDarkMode, toggleTheme] = useToggle(false);
-  return { isDarkMode, toggleTheme };
-};
-
 export const useMousePosition = () => {
   const [mousePosition, setMousePosition] = React.useState({
     x: null,

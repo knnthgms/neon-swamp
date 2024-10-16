@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Row, Col } from "antd";
-import { useMousePosition } from "../../hooks";
 
 type ContentSectionProps = React.ComponentPropsWithoutRef<"section"> & {
   children: React.ReactNode;
@@ -24,7 +23,7 @@ const SectionWrapper = styled.section<SectionWrapperProps>`
   &:before {
     background: radial-gradient(
       800px circle at ${({ mouseX, mouseY }) => `${mouseX}px ${mouseY}px`},
-      rgba(255, 255, 255, 0.1),
+      rgba(29, 78, 216, 0.15),
       transparent 40%
     );
     content: "";

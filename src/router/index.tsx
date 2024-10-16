@@ -6,18 +6,13 @@ import routes from "./config";
 import { CSSReset, CustomFont, AntdStyles } from "../styles/styles";
 import CustomHeader from "../components/CustomHeader";
 
-interface RouterProps {
-  toggleTheme: () => void;
-  isDarkMode: boolean;
-}
-
-const Router = ({ isDarkMode, toggleTheme }: RouterProps) => {
+const Router = () => {
   return (
     <Layout>
       <CSSReset />
       <AntdStyles />
       <CustomFont />
-      <CustomHeader toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+      <CustomHeader />
       <Suspense fallback={<Spin />}>
         <Switch>
           {routes.map((routeItem) => {

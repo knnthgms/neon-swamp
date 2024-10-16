@@ -6,18 +6,14 @@ import { SmallScreen, LargeScreen } from "./styles";
 import NameLogo from "../NameLogo";
 import MenuItems from "../MenuItems";
 import { MenuOutlined, MoonFilled, SunOutlined } from "@ant-design/icons";
+import { useTheme } from "../../theme/ThemeProvider";
 
 const { Header } = Layout;
 
-interface HeaderProps {
-  toggleTheme: () => void;
-  isDarkMode: boolean;
-}
-
-const CustomHeader = ({ isDarkMode, toggleTheme }: HeaderProps) => {
+const CustomHeader = () => {
   const { t } = useTranslation();
   const [showDrawer, setShowDrawer] = useState(false);
-
+  const { isDarkMode, toggleTheme } = useTheme();
   const displayDrawer = () => setShowDrawer(true);
   const hideDrawer = () => setShowDrawer(false);
 

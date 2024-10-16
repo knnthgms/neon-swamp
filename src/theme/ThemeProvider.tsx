@@ -98,11 +98,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      <ConfigProvider theme={currentTheme}>
-        <StyledThemeProvider theme={styledTheme}>
-          {children}
-        </StyledThemeProvider>
-      </ConfigProvider>
+      <StyledThemeProvider theme={styledTheme}>
+        <ConfigProvider theme={currentTheme}>{children}</ConfigProvider>
+      </StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };

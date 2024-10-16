@@ -7,7 +7,7 @@ const Container = styled.span`
 `;
 
 const FirstWord = styled.span`
-  color: #2e186b;
+  color: #58dbd4;
 `;
 
 const LastWord = styled.span`

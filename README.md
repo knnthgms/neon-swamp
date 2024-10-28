@@ -17,22 +17,22 @@ This portfolio website offers a professional, easy-to-navigate platform to highl
 
 ## Features
 
-    •	🌗 Dark Mode Toggle – Easily switch between light and dark themes for optimal viewing.
-    •	🌍 Internationalization – Multiple language support with seamless translation.
-    •	⚡ Performance Optimized – Designed for high Lighthouse scores, prioritizing speed and accessibility.
-    •	📐 Fully Responsive – Looks great on desktop, tablet, and mobile devices.
-    •	📂 Organized Content – Sections for projects, skills, about, and contact information.
-    •	💬 Integrated Contact Form – Reach out directly through a form with validation.
+- 🌗 Dark Mode Toggle – Easily switch between light and dark themes for optimal viewing.
+- 🌍 Internationalization – Multiple language support with seamless translation.
+- ⚡ Performance Optimized – Designed for high Lighthouse scores, prioritizing speed and accessibility.
+- 📐 Fully Responsive – Looks great on desktop, tablet, and mobile devices.
+- 📂 Organized Content – Sections for projects, skills, about, and contact information.
+- 💬 Integrated Contact Form – Reach out directly through a form with validation.
 
 ## Technology Stack
 
-    •	React – JavaScript library for building user interfaces.
-    •	TypeScript – Static typing for improved development experience.
-    •	Ant Design – UI library for responsive and customizable components.
-    •	Styled-Components – For CSS-in-JS, making styles modular and dynamic.
-    •	i18next – For internationalization and language support.
-    •	React Router – Page routing for easy navigation across sections.
-    •	Framer Motion – For smooth animations and enhanced interactivity.
+- React – JavaScript library for building user interfaces.
+- TypeScript – Static typing for improved development experience.
+- Ant Design – UI library for responsive and customizable components.
+- Styled-Components – For CSS-in-JS, making styles modular and dynamic.
+- i18next – For internationalization and language support.
+- React Router – Page routing for easy navigation across sections.
+- Framer Motion – For smooth animations and enhanced interactivity.
 
 ## Setup & Installation
 

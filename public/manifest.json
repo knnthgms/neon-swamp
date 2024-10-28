@@ -1,6 +1,6 @@
 {
-  "short_name": "Landy",
-  "name": "Landy - React Template",
+  "short_name": "Kenneth Portfolio",
+  "name": "Kenneth Gomes | Developer Portfolio",
   "icons": [
     {
       "src": "img/icons/logo192.png",
@@ -18,8 +18,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Kenneth Gomes' professional portfolio showcasing projects, skills, and expertise in frontend development and modern web technologies."
 }

@@ -18,34 +18,24 @@ const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 const { darkAlgorithm, defaultAlgorithm } = antdTheme;
 
 const commonTokenSettings = {
+  colorPrimary: "#ff7625",
   fontFamily: "Inter",
   sizeStep: 5,
   sizeUnit: 5,
   fontSize: 15,
 };
 
-const commonLayoutSettings = {
-  headerPadding: "0 1rem",
-};
-
 const draculaDarkMode = {
   algorithm: darkAlgorithm,
   token: {
     ...commonTokenSettings,
-    colorPrimary: "#58DBD4",
     colorBgLayout: "#0E1729",
     colorText: "#f8f8f2",
     colorBgContainer: "#1c2541",
     colorBorder: "#3a4a6a",
-    colorSuccess: "#3ddc97",
-    colorWarning: "#ffb86c",
-    colorError: "#ff5555",
-    colorInfo: "#58DBD4",
-    colorLink: "#58DBD4",
   },
   components: {
     Layout: {
-      ...commonLayoutSettings,
       headerBg: "#0E1729",
       footerBg: "#0E1729",
     },
@@ -56,20 +46,13 @@ const lightMode = {
   algorithm: defaultAlgorithm,
   token: {
     ...commonTokenSettings,
-    colorPrimary: "#ff7625",
     colorBgLayout: "#ffffff",
     colorText: "#000000",
     colorBgContainer: "#f0f2f5",
     colorBorder: "#d9d9d9",
-    colorSuccess: "#52c41a",
-    colorWarning: "#faad14",
-    colorError: "#ff4d4f",
-    colorInfo: "#1890ff",
-    colorLink: "#1890ff",
   },
   components: {
     Layout: {
-      ...commonLayoutSettings,
       headerBg: "#ffffff",
       footerBg: "#f0f2f5",
     },
@@ -81,7 +64,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [isDarkMode, toggleTheme] = useToggle();
+  const [isDarkMode, toggleTheme] = useToggle(true);
 
   const currentTheme = isDarkMode ? draculaDarkMode : lightMode;
 

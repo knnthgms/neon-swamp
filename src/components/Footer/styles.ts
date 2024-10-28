@@ -16,17 +16,11 @@ export const NavLink = styled(Link)`
 `;
 
 export const Chat = styled("p")`
-  color: #18216d;
   max-width: fit-content;
-  border-bottom: 1px solid #18216d;
+  text-decoration: underline;
   cursor: pointer;
   margin: 1rem 0;
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
-  }
 `;
 
 export const FooterContainer = styled("div")`

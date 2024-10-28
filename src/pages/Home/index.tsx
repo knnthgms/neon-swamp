@@ -9,11 +9,11 @@ const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContactForm = lazy(() => import("../../components/ContactForm"));
 
 const { Content } = Layout;
+
 const Home = () => {
   return (
     <Content>
       <ScrollToTop />
-
       <ContentSection id="intro" layout="left">
         <ContentSection.Block>
           <Fade triggerOnce>

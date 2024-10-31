@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 
 const Container = styled.section`
-  padding: 20vh 20px 0;
+  padding: 10vh 20px 0;
   display: flex;
   align-items: stretch;
   flex-direction: column;
   font-size: 1.4rem;
-  margin: auto;
-  max-width: 900px;
+  margin: 0 auto;
+  max-width: 920px;
 `;
 
 const Marquee = styled.span`

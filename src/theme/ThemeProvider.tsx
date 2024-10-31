@@ -38,7 +38,7 @@ const draculaDarkMode = {
   components: {
     Layout: {
       headerBg: "#265559",
-      footerBg: "#2b3e4f",
+      footerBg: "#265559",
     },
   },
 };

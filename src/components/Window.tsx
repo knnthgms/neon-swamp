@@ -15,9 +15,8 @@ const WindowElement = styled.div`
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   font-family: "Menlo", monospace;
-  margin: 40px 20px;
-  max-width: 900px;
   flex: 1;
+  margin-top: 10vh;
 `;
 
 const TitleBar = styled.div`

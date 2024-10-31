@@ -1,50 +1,71 @@
 import { RightOutlined } from "@ant-design/icons";
-import { Col, Row } from "antd";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 
 const Container = styled.section`
-  padding: 20vh 0;
+  padding: 20vh 20px 0;
   display: flex;
   align-items: stretch;
   flex-direction: column;
   font-size: 1.4rem;
-  flex: 1;
-  margin: 0 20px;
+  margin: auto;
+  max-width: 900px;
 `;
 
 const Marquee = styled.span`
-  color: #befcae;
-  font-size: 2rem;
   display: flex;
   gap: 8px;
+  color: ${({ theme }) => theme.colors.heading};
+  font-weight: 700;
+  font-size: 2rem;
   margin-bottom: 0.4rem;
+`;
+
+const Subtitle = styled.span`
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const Paragraph = styled.span`
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 function HeroSection() {
   const HelloMsg = `Hi, I'm Ken Gomes!`;
 
   return (
-    <Row align="middle" justify="center">
-      <Col xs={24} sm={24} md={18} lg={12}>
-        <Container>
-          <Marquee>
-            <RightOutlined />
-            <Typewriter
-              options={{
-                strings: HelloMsg,
-                autoStart: true,
-                delay: 35,
-              }}
-            />
-          </Marquee>
-          <span>
-            A web developer with a passion for building beautiful user
-            experiences.
-          </span>
-        </Container>
-      </Col>
-    </Row>
+    <Container>
+      <Marquee>
+        <RightOutlined />
+        <Typewriter
+          options={{
+            strings: HelloMsg,
+            autoStart: true,
+            delay: 35,
+          }}
+        />
+      </Marquee>
+      <Subtitle>
+        A web developer with a passion for building beautiful user experiences.
+      </Subtitle>
+      <Paragraph>
+        Most recently, I collaborated with OmniRetail Africa to build
+        applications for thousands of distributors, manufacturers, and
+        retailers. This role challenged me to design for low-bandwidth and
+        low-spec devices, using React Native.
+      </Paragraph>
+      <Paragraph>
+        I also spearheaded user behavioral analytics through A/B testing and
+        workflow optimization. With a background in Information Systems, I bring
+        expertise in UX, product management, and database management to every
+        project.
+      </Paragraph>
+    </Container>
   );
 }
 

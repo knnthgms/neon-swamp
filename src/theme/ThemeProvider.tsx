@@ -3,8 +3,6 @@ import { ConfigProvider, theme as antdTheme } from "antd";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useToggle } from "../hooks";
 
-const solidThemeColor = "#265559";
-
 interface ThemeContextType {
   isDarkMode: boolean;
   toggleTheme: () => void;
@@ -20,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 const { darkAlgorithm, defaultAlgorithm } = antdTheme;
 
 const commonTokenSettings = {
-  colorPrimary: "#ff7625",
+  colorPrimary: "#e67300",
   fontFamily: "Inter",
   sizeStep: 5,
   sizeUnit: 5,
@@ -31,15 +29,15 @@ const draculaDarkMode = {
   algorithm: darkAlgorithm,
   token: {
     ...commonTokenSettings,
-    colorBgLayout: solidThemeColor,
-    colorText: "#befcae",
+    colorBgLayout: "#265559",
+    colorTextHeading: "#befcae",
+    colorText: "#c5fcb6",
     colorBorder: "#3a4a6a",
     colorLink: "#befcae",
-    colorTextHeading: "#befcae",
   },
   components: {
     Layout: {
-      headerBg: solidThemeColor,
+      headerBg: "#265559",
       footerBg: "#2b3e4f",
     },
   },
@@ -49,14 +47,17 @@ const lightMode = {
   algorithm: defaultAlgorithm,
   token: {
     ...commonTokenSettings,
+    colorPrimary: "#d15b12", // slightly muted warm tone
     colorBgLayout: "#ffffff",
-    colorText: "#000000",
+    colorText: "#1a1a1a",
     colorBorder: "#d9d9d9",
+    colorLink: "#2a6a72",
+    colorTextHeading: "#1a3a33",
   },
   components: {
     Layout: {
-      headerBg: "#ffffff",
-      footerBg: "#f0f2f5",
+      headerBg: "#f0f2f5",
+      footerBg: "#e2e8ec",
     },
   },
 };
@@ -75,7 +76,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     colors: {
       primary: currentTheme.token.colorPrimary,
       background: currentTheme.token.colorBgLayout,
+      heading: currentTheme.token.colorTextHeading,
       text: currentTheme.token.colorText,
+      textSecondary: "#abe39d",
       border: currentTheme.token.colorBorder,
     },
   };

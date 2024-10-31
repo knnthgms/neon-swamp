@@ -123,10 +123,9 @@ const Window: React.FC = () => {
             <Caret>&gt;</Caret> <Key>Ken.education</Key>
           </Line>
           <Line indent>
-            <Value>Bachelor's in Computer Science</Value>
-          </Line>
-          <Line indent>
-            <Value>Master's in Information Systems</Value>
+            <Value>
+              ["BE in Information Science","MS in Information Systems"]
+            </Value>
           </Line>
           <LineSpacer />
 
@@ -146,9 +145,15 @@ const Window: React.FC = () => {
             <Typewriter
               options={{
                 strings: [
-                  "Ken.currentProject",
-                  "Ken.favoriteTechStack",
-                  "Ken.githubStats",
+                  "Ken.hobbies",
+                  "Ken.openSourceContributions",
+                  "Ken.techBlogs",
+                  "Ken.certifications",
+                  "Ken.favorites",
+                  "Ken.techPhilosophy",
+                  "Ken.mentorships",
+                  "Ken.recentAchievements",
+                  "Ken.futureGoals",
                 ],
                 autoStart: true,
                 delay: 35,

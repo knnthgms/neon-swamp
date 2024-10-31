@@ -33,7 +33,6 @@ const draculaDarkMode = {
     ...commonTokenSettings,
     colorBgLayout: solidThemeColor,
     colorText: "#befcae",
-    colorBgContainer: "#1c2541",
     colorBorder: "#3a4a6a",
     colorLink: "#befcae",
     colorTextHeading: "#befcae",
@@ -41,7 +40,7 @@ const draculaDarkMode = {
   components: {
     Layout: {
       headerBg: solidThemeColor,
-      footerBg: solidThemeColor,
+      footerBg: "#2b3e4f",
     },
   },
 };
@@ -52,7 +51,6 @@ const lightMode = {
     ...commonTokenSettings,
     colorBgLayout: "#ffffff",
     colorText: "#000000",
-    colorBgContainer: "#f0f2f5",
     colorBorder: "#d9d9d9",
   },
   components: {
@@ -78,7 +76,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       primary: currentTheme.token.colorPrimary,
       background: currentTheme.token.colorBgLayout,
       text: currentTheme.token.colorText,
-      containerBg: currentTheme.token.colorBgContainer,
       border: currentTheme.token.colorBorder,
     },
   };

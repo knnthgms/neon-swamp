@@ -15,7 +15,7 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#ff7625",
+  "background_color": "#265559",
   "description": "Kenneth Gomes' professional portfolio showcasing projects, skills, and expertise in frontend development and modern web technologies."
 }

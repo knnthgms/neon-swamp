@@ -10,6 +10,7 @@ const FlexContainer = styled(Content)`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  background: linear-gradient(to bottom, #265559, #3c7086, #707a8c, #2b3e4f);
 `;
 
 const Home = () => {

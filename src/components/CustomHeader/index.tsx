@@ -21,10 +21,6 @@ const CustomHeader = () => {
     });
   };
 
-  // const openCVPdf = () => {
-  //   window.open("assets/KENNETH_GOMES_CV.pdf", "_blank");
-  // };
-
   return (
     <Header>
       <MenuContainer>

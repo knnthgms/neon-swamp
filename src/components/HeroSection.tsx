@@ -25,7 +25,7 @@ function HeroSection() {
 
   return (
     <Row align="middle" justify="center">
-      <Col xs={22} sm={22} md={12} lg={12}>
+      <Col xs={24} sm={24} md={18} lg={12}>
         <Container>
           <Marquee>
             <RightOutlined />
@@ -38,7 +38,7 @@ function HeroSection() {
             />
           </Marquee>
           <span>
-            I'm a web developer. My passion is building beautiful user
+            A web developer with a passion for building beautiful user
             experiences.
           </span>
         </Container>

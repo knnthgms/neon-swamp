@@ -1,5 +1,5 @@
 import { Layout, Button } from "antd";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import {
   GithubOutlined,
@@ -10,12 +10,11 @@ import {
 const { Footer } = Layout;
 
 const FooterSection = styled(Footer)`
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `;
 
 const CustomFooter = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <FooterSection>

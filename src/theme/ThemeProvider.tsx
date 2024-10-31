@@ -3,6 +3,8 @@ import { ConfigProvider, theme as antdTheme } from "antd";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useToggle } from "../hooks";
 
+const solidThemeColor = "#265559";
+
 interface ThemeContextType {
   isDarkMode: boolean;
   toggleTheme: () => void;
@@ -29,15 +31,17 @@ const draculaDarkMode = {
   algorithm: darkAlgorithm,
   token: {
     ...commonTokenSettings,
-    colorBgLayout: "#0E1729",
-    colorText: "#f8f8f2",
+    colorBgLayout: solidThemeColor,
+    colorText: "#befcae",
     colorBgContainer: "#1c2541",
     colorBorder: "#3a4a6a",
+    colorLink: "#befcae",
+    colorTextHeading: "#befcae",
   },
   components: {
     Layout: {
-      headerBg: "#0E1729",
-      footerBg: "#0E1729",
+      headerBg: solidThemeColor,
+      footerBg: solidThemeColor,
     },
   },
 };

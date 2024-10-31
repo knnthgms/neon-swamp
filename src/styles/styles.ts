@@ -7,6 +7,7 @@ export const AntdStyles = createGlobalStyle`
 `;
 
 export const CustomFont = createGlobalStyle`
+/* Inter - ExtraLight */
 @font-face {
 	font-family: "Inter";
 	src: url("/fonts/Inter-Thin.ttf") format("truetype");

@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 const Container = styled.span`
-  font-weight: 500;
   font-size: 2rem;
   cursor: pointer;
 `;
 
 const FirstWord = styled.span`
-  color: #58dbd4;
+  font-weight: 800;
 `;
 
 const LastWord = styled.span`
-  color: #ff7625;
+  font-weight: 300;
 `;
 
 function NameLogo() {

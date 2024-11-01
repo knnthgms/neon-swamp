@@ -70,10 +70,11 @@ function HeroSection() {
                 experiences.
               </Subtitle>
               <Paragraph>
-                Most recently, I collaborated with OmniRetail Africa to build
-                applications for thousands of distributors, manufacturers, and
-                retailers. This role challenged me to design for low-bandwidth
-                and low-spec devices, using React Native.
+                Most recently, I worked with OmniRetail Africa to build
+                performant applications for thousands of distributors,
+                manufacturers, and retailers across Africa. This role challenged
+                me to design for low-bandwidth and low-spec devices, using React
+                Native.
               </Paragraph>
               <Paragraph>
                 I also spearheaded user behavioral analytics through A/B testing

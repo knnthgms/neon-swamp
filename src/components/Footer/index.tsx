@@ -6,6 +6,7 @@ import {
   LinkedinOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import { Fade } from "react-awesome-reveal";
 
 const { Footer } = Layout;
 
@@ -17,29 +18,31 @@ const CustomFooter = () => {
   // const { t } = useTranslation();
 
   return (
-    <FooterSection>
-      <Button
-        type="link"
-        href="https://github.com/knnthgms"
-        icon={<GithubOutlined />}
-      >
-        Github
-      </Button>
-      <Button
-        type="link"
-        href="https://www.linkedin.com/in/knnthgms"
-        icon={<LinkedinOutlined />}
-      >
-        LinkedIn
-      </Button>
-      <Button
-        type="link"
-        href="mailto:knnthgms@gmail.com"
-        icon={<MailOutlined />}
-      >
-        knnthgms@gmail.com
-      </Button>
-    </FooterSection>
+    <Fade delay={1000} triggerOnce>
+      <FooterSection>
+        <Button
+          type="link"
+          href="https://github.com/knnthgms"
+          icon={<GithubOutlined />}
+        >
+          Github
+        </Button>
+        <Button
+          type="link"
+          href="https://www.linkedin.com/in/knnthgms"
+          icon={<LinkedinOutlined />}
+        >
+          LinkedIn
+        </Button>
+        <Button
+          type="link"
+          href="mailto:knnthgms@gmail.com"
+          icon={<MailOutlined />}
+        >
+          knnthgms@gmail.com
+        </Button>
+      </FooterSection>
+    </Fade>
   );
 };
 

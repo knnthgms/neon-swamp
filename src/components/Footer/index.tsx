@@ -10,7 +10,7 @@ import { Fade } from "react-awesome-reveal";
 
 const { Footer } = Layout;
 
-const FooterSection = styled(Footer)`
+const Links = styled.div`
   text-align: center;
 `;
 
@@ -18,31 +18,33 @@ const CustomFooter = () => {
   // const { t } = useTranslation();
 
   return (
-    <Fade delay={1000} triggerOnce>
-      <FooterSection>
-        <Button
-          type="link"
-          href="https://github.com/knnthgms"
-          icon={<GithubOutlined />}
-        >
-          Github
-        </Button>
-        <Button
-          type="link"
-          href="https://www.linkedin.com/in/knnthgms"
-          icon={<LinkedinOutlined />}
-        >
-          LinkedIn
-        </Button>
-        <Button
-          type="link"
-          href="mailto:knnthgms@gmail.com"
-          icon={<MailOutlined />}
-        >
-          knnthgms@gmail.com
-        </Button>
-      </FooterSection>
-    </Fade>
+    <Footer id="contact">
+      <Fade delay={1000} triggerOnce>
+        <Links>
+          <Button
+            type="link"
+            href="https://github.com/knnthgms"
+            icon={<GithubOutlined />}
+          >
+            Github
+          </Button>
+          <Button
+            type="link"
+            href="https://www.linkedin.com/in/knnthgms"
+            icon={<LinkedinOutlined />}
+          >
+            LinkedIn
+          </Button>
+          <Button
+            type="link"
+            href="mailto:knnthgms@gmail.com"
+            icon={<MailOutlined />}
+          >
+            knnthgms@gmail.com
+          </Button>
+        </Links>
+      </Fade>
+    </Footer>
   );
 };
 

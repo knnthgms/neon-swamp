@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { I18nextProvider } from "react-i18next";
 import { ThemeProvider } from "./theme/ThemeProvider";
-import Router from "./router";
+import AppLayout from "./common/AppLayout";
 import i18n from "./translation";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
       <I18nextProvider i18n={i18n}>
         <ThemeProvider>
-          <Router />
+          <AppLayout />
         </ThemeProvider>
       </I18nextProvider>
     </BrowserRouter>

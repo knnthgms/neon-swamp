@@ -1,14 +1,7 @@
-import { Layout } from "antd";
 import HeroSection from "../../components/HeroSection";
 
-const { Content } = Layout;
-
 const Home = () => {
-  return (
-    <Content>
-      <HeroSection />
-    </Content>
-  );
+  return <HeroSection />;
 };
 
 export default Home;

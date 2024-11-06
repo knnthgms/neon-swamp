@@ -61,11 +61,7 @@ const Key = styled.span`
 
 const Link = styled.a`
   color: #befcae;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
 `;
 
 const Value = styled.span`
@@ -101,9 +97,18 @@ const Window: React.FC = () => {
           <Line indent>
             <Value>
               ["
-              <Link href="mailto:knnthgms@gmail.com">knnthgms@gmail.com</Link>",
-              "<Link href="https://linkedin.com/in/knnthgms">LinkedIn</Link>", "
-              <Link href="https://github.com/knnthgms">Github</Link>"]
+              <Link target="_blank" href="mailto:knnthgms@gmail.com">
+                knnthgms@gmail.com
+              </Link>
+              ", "
+              <Link target="_blank" href="https://linkedin.com/in/knnthgms">
+                LinkedIn
+              </Link>
+              ", "
+              <Link target="_blank" href="https://github.com/knnthgms">
+                Github
+              </Link>
+              "]
             </Value>
           </Line>
           <LineSpacer />
@@ -112,9 +117,13 @@ const Window: React.FC = () => {
             <Caret>&gt;</Caret> <Key>Ken.resume</Key>
           </Line>
           <Line indent>
-            <Link href="assets/KENNETH_GOMES_CV.pdf">
-              "ken_gomes_resume.pdf"
-            </Link>
+            <Value>
+              "
+              <Link target="_blank" href="assets/KENNETH_GOMES_CV.pdf">
+                ken_gomes_resume.pdf
+              </Link>
+              "
+            </Value>
           </Line>
           <LineSpacer />
 

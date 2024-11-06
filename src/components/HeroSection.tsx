@@ -17,14 +17,20 @@ const gradient = keyframes`
 `;
 
 const gradientColors = [
-  "#befcae", // Soft, light green
-  "#a3f7bf", // Light mint green
-  "#80f1c6", // Bright aqua green
-  "#5cd3e3", // Aqua
-  "#34b6e8", // Soft cyan blue
+  "#befcae", // Soft light green
+  "#a6e8a1", // Subtle mint green
+  "#8fd393", // Muted pastel green
+  "#7cceb2", // Light jade
+  "#6cd1d2", // Light aqua
+  "#4fc6d8", // Bright turquoise
+  "#2ba7d4", // Vivid teal
   "#2193b0", // Sky blue
-  "#6dd5ed", // Light blue
-  "#91e8f9", // Lighter blue for contrast
+  "#1568a5", // Deep ocean blue
+  "#6d4c93", // Rich violet (adds a pop of color)
+  "#8c52ab", // Soft purple
+  "#a93fa5", // Lush pink (for a vibrant pop)
+  "#d93f97", // Bright magenta (final pop)
+  "#91e8f9", // Lighter cyan for contrast
 ];
 
 const Container = styled.div`
@@ -52,7 +58,7 @@ const Title = styled.span<{ animate: boolean }>`
   ${({ animate }) =>
     animate &&
     css`
-      animation: ${gradient} 5s ease-in-out infinite;
+      animation: ${gradient} 10s ease-in-out infinite;
     `}
 `;
 

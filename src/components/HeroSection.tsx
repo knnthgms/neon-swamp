@@ -1,22 +1,59 @@
-import { RightOutlined } from "@ant-design/icons";
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import Typewriter from "typewriter-effect";
 import { useToggle } from "../hooks";
 import { Fade } from "react-awesome-reveal";
 import Window from "./Window";
+
+const gradient = keyframes`
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+`;
+
+const gradientColors = [
+  "#befcae", // Soft, light green
+  "#a3f7bf", // Light mint green
+  "#80f1c6", // Bright aqua green
+  "#5cd3e3", // Aqua
+  "#34b6e8", // Soft cyan blue
+  "#2193b0", // Sky blue
+  "#6dd5ed", // Light blue
+  "#91e8f9", // Lighter blue for contrast
+];
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Title = styled.span`
+const Title = styled.span<{ animate: boolean }>`
   display: flex;
   gap: 8px;
-  color: ${({ theme }) => theme.colors.heading};
-  font-weight: 700;
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 0.4rem;
+  color: ${({ animate, theme }) =>
+    animate ? "transparent" : theme.colors.heading};
+  background: ${({ animate }) =>
+    animate
+      ? `linear-gradient(to right, ${gradientColors.join(", ")})`
+      : "none"};
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: ${({ animate, theme }) =>
+    animate ? "transparent" : theme.colors.heading};
+  ${({ animate }) =>
+    animate &&
+    css`
+      animation: ${gradient} 5s ease-in-out infinite;
+    `}
 `;
 
 const Subtitle = styled.span`
@@ -36,15 +73,20 @@ function HeroSection() {
   const HelloMsg = `Hi, I'm Ken Gomes!`;
 
   const [showRest, toggleShowRest] = useToggle(false);
+  const [showGradient, toggleShowGradient] = useToggle(false);
 
   const onCompleteHelloMsg = () => {
     toggleShowRest();
   };
 
+  const startGradientText = () => {
+    toggleShowGradient();
+  };
+
   return (
     <Container>
-      <Title>
-        <RightOutlined />
+      <Title animate={showGradient}>
+        &gt;
         <Typewriter
           options={{ delay: 30 }}
           onInit={(t) =>
@@ -53,6 +95,8 @@ function HeroSection() {
               .start()
               .pauseFor(200)
               .callFunction(onCompleteHelloMsg)
+              .pauseFor(1000)
+              .callFunction(startGradientText)
           }
         />
       </Title>

@@ -55,9 +55,9 @@ const CustomHeader = () => {
           </Link>
         </Logo>
         <Links>
-          <Button href="/projects" type="text">
+          {/* <Button href="/projects" type="text">
             {t("projects")}
-          </Button>
+          </Button> */}
           <Button onClick={() => scrollTo("contact")} type="text">
             {t("contact")}
           </Button>

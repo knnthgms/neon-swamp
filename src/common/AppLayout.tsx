@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import CustomFooter from "../components/Footer";
 import Router from "../router";
 import styled from "styled-components";
+import BackgroundLines from "../styles/BackgroundLines";
 
 const { Content } = Layout;
 
@@ -24,6 +25,7 @@ function AppLayout() {
         <CustomFont />
         <CustomHeader />
         <Content>
+          <BackgroundLines />
           <Row justify="center">
             <Col xs={24} sm={21} md={18} lg={15} xl={12}>
               <Container>

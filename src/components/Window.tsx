@@ -136,15 +136,40 @@ const Window: React.FC = () => {
             </Value>
           </Line>
           <LineSpacer />
-
           <Line>
-            <Caret>&gt;</Caret> <Key>Ken.skills</Key>
+            <Caret>&gt;</Caret> <Key>Ken.languages</Key>
           </Line>
           <Line indent>
             <Value>
-              ["HTML", "CSS", "JavaScript", "React", "React Native",
-              "TypeScript", "Redux", "Node.js", "Express", "MongoDB", "GraphQL",
-              "Webpack", "Git", "Jest", "UI/UX"]
+              ["HTML", "CSS", "SASS", "JavaScript ES6+", "TypeScript", "NodeJS",
+              "Python", "Go"]
+            </Value>
+          </Line>
+          <Line>
+            <Caret>&gt;</Caret> <Key>Ken.frameworks</Key>
+          </Line>
+          <Line indent>
+            <Value>
+              ["ReactJS", "VueJS", "Express", "React Native", "Redux", "NextJS"]
+            </Value>
+          </Line>
+          <Line>
+            <Caret>&gt;</Caret> <Key>Ken.tools</Key>
+          </Line>
+          <Line indent>
+            <Value>
+              ["Git", "Firebase", "AWS", "MySQL","MongoDB", "PostgreSQL",
+              "CI/CD", "Docker"]
+            </Value>
+          </Line>
+          <Line>
+            <Caret>&gt;</Caret> <Key>Ken.design</Key>
+          </Line>
+          <Line indent>
+            <Value>
+              ["Antd","Bootstrap", "Material", "Tailwind", "Styled components",
+              "UI/UX", "Figma", "Adobe XD", "Adobe Photoshop", "Adobe
+              Illustrator"]
             </Value>
           </Line>
           <LineSpacer />

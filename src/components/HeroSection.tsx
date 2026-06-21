@@ -109,20 +109,21 @@ function HeroSection() {
       {showRest && (
         <Fade triggerOnce cascade damping={0.25}>
           <Subtitle>
-            A web developer with a passion for building beautiful user
-            experiences.
+            Senior Frontend Engineer with a passion for data-informed,
+            user-centric products.
           </Subtitle>
           <Paragraph>
-            Most recently, I worked with OmniRetail Africa to build performant
-            applications for thousands of distributors, manufacturers, and
-            retailers across Africa. This role challenged me to design for
-            low-bandwidth and low-spec devices, using React Native.
+            Currently at Okta, building identity and security products used by
+            millions. Previously at Aviatrix, contributing to multi-cloud
+            networking and security — and before that, leading frontend
+            initiatives at OmniRetail across markets in Africa, where I owned
+            everything from design-system work to behavioral analytics and A/B
+            testing that drove real growth.
           </Paragraph>
           <Paragraph>
-            I also spearheaded user behavioral analytics through A/B testing and
-            workflow optimization. With a background in Information Systems, I
-            bring expertise in UX, product management, and database management
-            to every project.
+            5+ years deep in React and React Native. I care about clean
+            architecture, delightful UX, and making data legible to the humans
+            who need it most.
           </Paragraph>
           <Window />
         </Fade>

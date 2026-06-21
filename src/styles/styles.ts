@@ -205,4 +205,30 @@ p, h1, h2, h3, h4, h5, h6 {
   /* Firefox Scrollbar Styles */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+
+  /* View Transitions */
+  @keyframes vt-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes vt-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  ::view-transition-old(root) {
+    animation: 150ms ease-out both vt-fade-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: 250ms ease-out both vt-fade-in;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+    }
+  }
 `;

@@ -1,4 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { flushSync } from "react-dom";
 
 export const useToggle = (initialState = false): [boolean, any] => {
   const [state, setState] = useState<boolean>(initialState);
@@ -22,4 +24,26 @@ export const useMousePosition = () => {
   }, []);
 
   return mousePosition;
+};
+
+export const useNavigate = () => {
+  const history = useHistory();
+
+  return useCallback(
+    (to: string) => {
+      if (!("startViewTransition" in document)) {
+        history.push(to);
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      (document as any).startViewTransition(() => {
+        flushSync(() => {
+          history.push(to);
+        });
+        window.scrollTo(0, 0);
+      });
+    },
+    [history]
+  );
 };

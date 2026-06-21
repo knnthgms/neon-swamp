@@ -2,6 +2,7 @@ import { Button, Layout } from "antd";
 import styled from "styled-components";
 import { useLocation, Link } from "react-router-dom";
 import NameLogo from "../NameLogo";
+import { useNavigate } from "../../hooks";
 
 const { Header } = Layout;
 
@@ -37,6 +38,7 @@ const Links = styled.div`
 const CustomHeader = () => {
   const location = useLocation();
   const isRootPath = location.pathname === "/";
+  const navigate = useNavigate();
 
   const scrollToContact = () => {
     const element = document.getElementById("contact") as HTMLDivElement;
@@ -47,18 +49,18 @@ const CustomHeader = () => {
     <StyledHeader>
       <HeaderContent root={isRootPath}>
         <Logo root={isRootPath}>
-          <Link to="/">
+          <Link to="/" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
             <NameLogo />
           </Link>
         </Logo>
         <Links>
-          <Button href="/blog" type="text" size="small">
+          <Button onClick={() => navigate("/blog")} type="text" size="small">
             Blog
           </Button>
-          <Button href="/links" type="text" size="small">
+          <Button onClick={() => navigate("/links")} type="text" size="small">
             Links
           </Button>
-          <Button href="/lab" type="text" size="small">
+          <Button onClick={() => navigate("/lab")} type="text" size="small">
             Lab
           </Button>
           <Button onClick={scrollToContact} type="text" size="small">

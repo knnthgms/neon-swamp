@@ -109,8 +109,8 @@ function HeroSection() {
       {showRest && (
         <Fade triggerOnce cascade damping={0.25}>
           <Subtitle>
-            Senior Frontend Engineer with a passion for data-informed,
-            user-centric products.
+            Product-minded Senior Software Engineer with 6+ years building MVPs
+            and scaling product foundations at high-growth startups.
           </Subtitle>
           <Paragraph>
             Currently at Okta, building identity and security products used by
@@ -121,9 +121,9 @@ function HeroSection() {
             testing that drove real growth.
           </Paragraph>
           <Paragraph>
-            5+ years deep in React and React Native. I care about clean
-            architecture, delightful UX, and making data legible to the humans
-            who need it most.
+            Comfortable across the stack. Work closely with product, design, and
+            growth teams. I care about clean architecture, delightful UX, and
+            making data legible to the humans who need it most.
           </Paragraph>
           <Window />
         </Fade>

@@ -109,21 +109,18 @@ function HeroSection() {
       {showRest && (
         <Fade triggerOnce cascade damping={0.25}>
           <Subtitle>
-            Senior Frontend Engineer with a passion for data-informed,
-            user-centric products.
+            Product-minded Senior Software Engineer with 6+ years building MVPs
+            and scaling product foundations at high-growth startups.
           </Subtitle>
           <Paragraph>
-            Currently at Okta, building identity and security products used by
-            millions. Previously at Aviatrix, contributing to multi-cloud
-            networking and security — and before that, leading frontend
-            initiatives at OmniRetail across markets in Africa, where I owned
-            everything from design-system work to behavioral analytics and A/B
-            testing that drove real growth.
+            Currently at Okta. Before that, Aviatrix (multi-cloud networking)
+            and OmniRetail (B2B commerce across Africa) — often part of the
+            core team shipping 0→1 products under high ambiguity and fast
+            feedback cycles.
           </Paragraph>
           <Paragraph>
-            5+ years deep in React and React Native. I care about clean
-            architecture, delightful UX, and making data legible to the humans
-            who need it most.
+            Comfortable across the stack. Work closely with product, design, and
+            growth teams.
           </Paragraph>
           <Window />
         </Fade>

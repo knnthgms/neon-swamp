@@ -1,4 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#265559"/>
-  <text x="16" y="22" text-anchor="middle" font-family="'Menlo','Courier New',monospace" font-weight="700" font-size="13" fill="#befcae">K&gt;G</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f6b6e"/>
+      <stop offset="100%" stop-color="#1a4345"/>
+    </linearGradient>
+    <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cp">
+      <rect width="32" height="32" rx="7"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#cp)">
+    <rect width="32" height="32" fill="url(#bg)"/>
+    <text x="16" y="21" text-anchor="middle" font-family="-apple-system,Helvetica Neue,sans-serif" font-size="17" fill="#befcae"><tspan font-weight="900">K</tspan><tspan font-weight="100">G</tspan></text>
+    <path d="M 0 0 L 32 0 Q 32 15 16 17 Q 0 15 0 0 Z" fill="url(#gl)"/>
+    <rect width="32" height="32" rx="7" fill="none" stroke="#befcae" stroke-width="1" stroke-opacity="0.2"/>
+  </g>
 </svg>

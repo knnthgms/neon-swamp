@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
 import Typewriter from "typewriter-effect";
+import { useState, useEffect } from "react";
 import { useToggle } from "../hooks";
-import { Fade } from "react-awesome-reveal";
 import Window from "./Window";
 
 const gradient = keyframes`
@@ -80,6 +80,7 @@ function HeroSection() {
 
   const [showRest, toggleShowRest] = useToggle(false);
   const [showGradient, toggleShowGradient] = useToggle(false);
+  const [staggerShown, setStaggerShown] = useState(false);
 
   const onCompleteHelloMsg = () => {
     toggleShowRest();
@@ -88,6 +89,13 @@ function HeroSection() {
   const startGradientText = () => {
     toggleShowGradient();
   };
+
+  useEffect(() => {
+    if (showRest) {
+      const id = requestAnimationFrame(() => setStaggerShown(true));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [showRest]);
 
   return (
     <Container>
@@ -107,12 +115,12 @@ function HeroSection() {
         />
       </Title>
       {showRest && (
-        <Fade triggerOnce cascade damping={0.25}>
-          <Subtitle>
+        <div className={`t-stagger${staggerShown ? " is-shown" : ""}`}>
+          <Subtitle className="t-stagger-line t-stagger-line--1">
             Product-minded Senior Software Engineer with 6+ years building MVPs
             and scaling product foundations at high-growth startups.
           </Subtitle>
-          <Paragraph>
+          <Paragraph className="t-stagger-line t-stagger-line--2">
             Currently at Okta, building identity and security products used by
             millions. Previously at Aviatrix, contributing to multi-cloud
             networking and security — and before that, leading frontend
@@ -120,13 +128,15 @@ function HeroSection() {
             everything from design-system work to behavioral analytics and A/B
             testing that drove real growth.
           </Paragraph>
-          <Paragraph>
+          <Paragraph className="t-stagger-line t-stagger-line--3">
             Comfortable across the stack. Work closely with product, design, and
             growth teams. I care about clean architecture, delightful UX, and
             making data legible to the humans who need it most.
           </Paragraph>
-          <Window />
-        </Fade>
+          <div className="t-stagger-line t-stagger-line--4">
+            <Window />
+          </div>
+        </div>
       )}
     </Container>
   );

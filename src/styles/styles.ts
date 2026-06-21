@@ -231,4 +231,46 @@ p, h1, h2, h3, h4, h5, h6 {
       animation: none;
     }
   }
+
+  /* ── transitions-dev: root tokens ── */
+  :root {
+    --stagger-dur: 500ms;
+    --stagger-distance: 12px;
+    --stagger-stagger: 40ms;
+    --stagger-blur: 3px;
+    --stagger-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ── transitions-dev: texts reveal (18) ── */
+  .t-stagger-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(var(--stagger-distance));
+    filter: blur(var(--stagger-blur));
+    transition:
+      opacity   var(--stagger-dur) var(--stagger-ease),
+      transform var(--stagger-dur) var(--stagger-ease),
+      filter    var(--stagger-dur) var(--stagger-ease);
+    will-change: transform, opacity, filter;
+  }
+  .t-stagger-line--2 { transition-delay: var(--stagger-stagger); }
+  .t-stagger-line--3 { transition-delay: calc(var(--stagger-stagger) * 2); }
+  .t-stagger-line--4 { transition-delay: 200ms; }
+
+  .t-stagger.is-shown .t-stagger-line {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  .t-stagger.is-hiding .t-stagger-line {
+    opacity: 0;
+    transform: translateY(0);
+    filter: blur(0);
+    transition: opacity 200ms ease, transform 0s linear, filter 0s linear;
+    transition-delay: 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .t-stagger-line { transition: none !important; }
+  }
 `;

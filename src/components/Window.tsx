@@ -96,8 +96,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["SE @ Okta", "SMTS @ Aviatrix", "Staff Eng @ OmniRetail",
-              "FE @ YouPlus", "SDE @ TotalCloud"]
+              ["SE @ Okta", "SMTS @ Aviatrix", "Staff Eng @ OmniRetail", "FE @
+              YouPlus", "SDE @ TotalCloud"]
             </Value>
           </Line>
           <LineSpacer />
@@ -149,8 +149,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["BE in Information Technology (St. Joseph Engineering College)",
-              "MSc in Management Information Systems (Univ. of Portsmouth)"]
+              ["BE in Information Science", "MSc in Management Information
+              Systems "]
             </Value>
           </Line>
           <LineSpacer />
@@ -159,8 +159,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["Multicloud Network Associate", "Multicloud Network Professional",
-              "Section x Okta ProfAI: AI Proficiency"]
+              ["Multicloud Network Associate", "Multicloud Network
+              Professional", "Section x Okta ProfAI: AI Proficiency"]
             </Value>
           </Line>
           <LineSpacer />
@@ -169,8 +169,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["JavaScript (ES2023+)", "TypeScript", "Python", "Go", "C++",
-              "SQL", "HTML5", "CSS3", "SASS"]
+              ["JavaScript (ES2023+)", "TypeScript", "Node.js", "Python", "Go",
+              "C++", "SQL", "HTML5", "CSS3", "SASS"]
             </Value>
           </Line>
           <Line>
@@ -178,8 +178,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["React", "React Native", "Next.js", "Redux", "Tailwind CSS",
-              "styled-components"]
+              ["React", "React Native", "Next.js","Vue.js", "Express", "Redux",
+              "Tailwind CSS", "styled-components"]
             </Value>
           </Line>
           <Line>
@@ -196,8 +196,8 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["Claude Code", "GitHub Copilot", "ChatGPT", "OpenAI API",
-              "prompt engineering"]
+              ["Claude Code", "GitHub Copilot", "ChatGPT", "OpenAI API", "prompt
+              engineering"]
             </Value>
           </Line>
           <Line>

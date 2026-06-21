@@ -113,14 +113,17 @@ function HeroSection() {
             and scaling product foundations at high-growth startups.
           </Subtitle>
           <Paragraph>
-            Currently at Okta. Before that, Aviatrix (multi-cloud networking)
-            and OmniRetail (B2B commerce across Africa) — often part of the
-            core team shipping 0→1 products under high ambiguity and fast
-            feedback cycles.
+            Currently at Okta, building identity and security products used by
+            millions. Previously at Aviatrix, contributing to multi-cloud
+            networking and security — and before that, leading frontend
+            initiatives at OmniRetail across markets in Africa, where I owned
+            everything from design-system work to behavioral analytics and A/B
+            testing that drove real growth.
           </Paragraph>
           <Paragraph>
             Comfortable across the stack. Work closely with product, design, and
-            growth teams.
+            growth teams. I care about clean architecture, delightful UX, and
+            making data legible to the humans who need it most.
           </Paragraph>
           <Window />
         </Fade>

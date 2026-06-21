@@ -1,5 +1,4 @@
 import { Button, Layout } from "antd";
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { useLocation, Link } from "react-router-dom";
 import NameLogo from "../NameLogo";
@@ -31,19 +30,17 @@ const Logo = styled.div<{ root: boolean }>`
 
 const Links = styled.div`
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
+  align-items: center;
 `;
 
 const CustomHeader = () => {
-  const { t } = useTranslation();
   const location = useLocation();
   const isRootPath = location.pathname === "/";
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
+  const scrollToContact = () => {
+    const element = document.getElementById("contact") as HTMLDivElement;
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -55,11 +52,17 @@ const CustomHeader = () => {
           </Link>
         </Logo>
         <Links>
-          {/* <Button href="/projects" type="text">
-            {t("projects")}
-          </Button> */}
-          <Button onClick={() => scrollTo("contact")} type="text">
-            {t("contact")}
+          <Button href="/blog" type="text" size="small">
+            Blog
+          </Button>
+          <Button href="/links" type="text" size="small">
+            Links
+          </Button>
+          <Button href="/lab" type="text" size="small">
+            Lab
+          </Button>
+          <Button onClick={scrollToContact} type="text" size="small">
+            Contact
           </Button>
         </Links>
       </HeaderContent>

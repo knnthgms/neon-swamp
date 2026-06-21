@@ -85,6 +85,24 @@ const Window: React.FC = () => {
         </TitleBar>
         <Content>
           <Line>
+            <Caret>&gt;</Caret> <Key>Ken.currentRole</Key>
+          </Line>
+          <Line indent>
+            <Value>"Senior Software Engineer @ Okta"</Value>
+          </Line>
+          <LineSpacer />
+          <Line>
+            <Caret>&gt;</Caret> <Key>Ken.experience</Key>
+          </Line>
+          <Line indent>
+            <Value>
+              [&#123; Okta, SE, 2025–now &#125;, &#123; Aviatrix, SMTS,
+              2025 &#125;, &#123; OmniRetail, Staff Eng, 2021–25 &#125;,
+              &#123; YouPlus, FE Dev, 2017–19 &#125;]
+            </Value>
+          </Line>
+          <LineSpacer />
+          <Line>
             <Caret>&gt;</Caret> <Key>Ken.currentLocation</Key>
           </Line>
           <Line indent>
@@ -132,7 +150,18 @@ const Window: React.FC = () => {
           </Line>
           <Line indent>
             <Value>
-              ["BE in Information Science","MS in Information Systems"]
+              ["BE in Information Technology (St. Joseph Engineering College)",
+              "MSc in Management Information Systems (Univ. of Portsmouth)"]
+            </Value>
+          </Line>
+          <LineSpacer />
+          <Line>
+            <Caret>&gt;</Caret> <Key>Ken.certifications</Key>
+          </Line>
+          <Line indent>
+            <Value>
+              ["Multicloud Network Associate", "Multicloud Network Professional",
+              "Section x Okta ProfAI: AI Proficiency"]
             </Value>
           </Line>
           <LineSpacer />
@@ -180,12 +209,12 @@ const Window: React.FC = () => {
                 strings: [
                   "Ken.hobbies",
                   "Ken.openSourceContributions",
-                  "Ken.techBlogs",
-                  "Ken.certifications",
+                  "Ken.currentlyReading",
                   "Ken.favorites",
                   "Ken.techPhilosophy",
                   "Ken.mentorships",
-                  "Ken.recentAchievements",
+                  "Ken.sideProjects",
+                  "Ken.weeklyPicks",
                   "Ken.futureGoals",
                 ],
                 autoStart: true,

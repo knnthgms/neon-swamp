@@ -12,8 +12,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html, body {
+/* Grid lives on html — always the true page background, no z-index tricks */
+html {
+  --mx: 50%;
+  --my: 50%;
   background-color: #080f1e;
+  background-image:
+    radial-gradient(circle 500px at var(--mx) var(--my), rgba(45, 212, 191, 0.13) 0%, transparent 70%),
+    linear-gradient(rgba(45, 212, 191, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.07) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  background-position: 0 0, -1px -1px, -1px -1px;
+  background-attachment: fixed;
+}
+
+body {
   color: #cbd5e1;
 }
 
@@ -48,20 +61,4 @@ html, body {
 }
 .contact-card:hover .contact-value {
   color: #cbd5e1;
-}
-
-/* Interactive grid background */
-.grid-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  --mx: 50%;
-  --my: 50%;
-  background-color: #080f1e;
-  background-image:
-    radial-gradient(circle 700px at var(--mx) var(--my), rgba(45, 212, 191, 0.08) 0%, transparent 65%),
-    linear-gradient(rgba(45, 212, 191, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 191, 0.035) 1px, transparent 1px);
-  background-size: auto, 48px 48px, 48px 48px;
-  background-position: 0 0, -1px -1px, -1px -1px;
 }

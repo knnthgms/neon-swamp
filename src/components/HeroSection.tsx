@@ -33,7 +33,7 @@ const CONTACT_LINKS = [
 export default function HeroSection() {
   return (
     <div className="flex flex-col gap-20">
-      <section id="about" className="flex flex-col gap-4">
+      <section id="about" className="flex flex-col gap-5">
         <h1 className="text-4xl font-bold tracking-tight" style={{ color: "#e2e8f0" }}>
           Hi, I&apos;m{" "}
           <span style={{
@@ -48,10 +48,10 @@ export default function HeroSection() {
         <p className="text-lg leading-relaxed" style={{ color: "#94a3b8" }}>
           Product-minded Senior Software Engineer with 6+ years building MVPs and scaling product foundations at high-growth startups.
         </p>
-        <p className="text-lg leading-relaxed" style={{ color: "#64748b" }}>
+        <p className="leading-relaxed" style={{ color: "#64748b" }}>
           Currently at Okta, building identity and security products used by millions. Previously at Aviatrix, contributing to multi-cloud networking and security — and before that, leading frontend initiatives at OmniRetail across markets in Africa, where I owned everything from design-system work to behavioral analytics and A/B testing that drove real growth.
         </p>
-        <p className="text-lg leading-relaxed" style={{ color: "#64748b" }}>
+        <p className="leading-relaxed" style={{ color: "#64748b" }}>
           Comfortable across the stack. Work closely with product, design, and growth teams. I care about clean architecture, delightful UX, and making data legible to the humans who need it most.
         </p>
       </section>
@@ -101,11 +101,11 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <span className="contact-desc text-xs hidden sm:block" style={{ color: "#1e3a5f" }}>{item.desc}</span>
+                <span className="text-xs hidden sm:block" style={{ color: "#1e3a5f" }}>{item.desc}</span>
                 <svg
                   width="14" height="14" viewBox="0 0 14 14" fill="none"
                   className="contact-arrow flex-shrink-0"
-                  style={{ color: "#1e3a5f", transition: "color 0.2s, transform 0.2s" }}
+                  style={{ color: "#1e3a5f", transition: "color 0.2s" }}
                 >
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

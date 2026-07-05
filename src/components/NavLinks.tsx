@@ -22,9 +22,6 @@ export default function NavLinks() {
     [router]
   );
 
-  const scrollToContact = () =>
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <nav className="flex items-center gap-1">
       {NAV.map(({ label, href }) => {
@@ -40,13 +37,6 @@ export default function NavLinks() {
           </button>
         );
       })}
-      <button
-        onClick={scrollToContact}
-        className="px-3 py-1.5 rounded-md text-sm cursor-pointer bg-transparent border-0 transition-colors"
-        style={{ color: "#475569" }}
-      >
-        Contact
-      </button>
     </nav>
   );
 }

@@ -1,155 +1,78 @@
-# 🚀 Kenneth Gomes - Full Stack Developer Portfolio
+# neon-swamp
 
-> **Live Demo:** [https://techbygomes.netlify.app/](https://techbygomes.netlify.app/)
+Personal site for [Ken Gomes](https://techbygomes.netlify.app) — built with Next.js 16, Tailwind CSS v4, and no animation libraries.
 
-A modern, responsive personal portfolio website showcasing full-stack development skills, built with cutting-edge web technologies and best practices. This project demonstrates expertise in React, TypeScript, modern CSS, and internationalization.
+**Live:** https://techbygomes.netlify.app
 
-## ✨ Key Features
+## Stack
 
-- 🌍 **Internationalization** – Multi-language support (English/Spanish) with seamless translation
-- 📱 **Fully Responsive** – Optimized for all devices with mobile-first design
-- 🎨 **Modern UI/UX** – Beautiful animations, typewriter effects, and interactive elements
-- 🚀 **Performance Optimized** – Built with React 18 and modern build tools
-- 🎯 **SEO Ready** – Proper meta tags and semantic HTML structure
-- 📊 **Contact Form** – Integrated contact system with validation
-- 🖥️ **Terminal Interface** – Interactive terminal-style component showcasing skills
+- **Next.js 16** — App Router, Turbopack, maximised server rendering
+- **Tailwind CSS v4** — utility classes; global CSS for keyframes and custom properties
+- **Geist Sans + Geist Mono** — via `next/font/google`
+- **TypeScript** — strict mode throughout
 
-## 🛠️ Technology Stack
+## Running locally
 
-### Frontend
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
+```
 
-- **React 18** – Latest React with concurrent features
-- **TypeScript 4.9** – Static typing for robust development
-- **Styled Components** – CSS-in-JS for modular styling
-- **Ant Design** – Professional UI component library
-- **React Router** – Client-side routing
+## Project structure
 
-### Development Tools
+```
+src/
+├── app/
+│   ├── layout.tsx          # root layout: header, footer, grid, scroll nav
+│   ├── page.tsx            # homepage
+│   ├── blog/page.tsx       # writing page
+│   ├── links/page.tsx      # curated links
+│   ├── lab/page.tsx        # experiments (behind LAB_ENABLED flag)
+│   └── globals.css         # design tokens, keyframes, reveal transitions
+│
+├── components/
+│   ├── Header.tsx          # sticky frosted-glass header
+│   ├── NavLinks.tsx        # client — view transition navigation
+│   ├── Footer.tsx          # minimal footer
+│   ├── GridBackground.tsx  # client — tracks mouse position for CSS spotlight
+│   ├── ScrollNav.tsx       # client — scrollspy side nav (homepage only)
+│   ├── Reveal.tsx          # client — IntersectionObserver scroll fade-in
+│   ├── PageHeader.tsx      # h1 + subtitle with entrance animation
+│   ├── HeroSection.tsx     # homepage layout (about, stack, contact)
+│   ├── AboutSection.tsx    # bio paragraphs
+│   ├── ContactSection.tsx  # contact links with ContactCard
+│   ├── Window.tsx          # Tokyo Night terminal component
+│   ├── PostCard.tsx        # blog post card
+│   ├── LinkGroup.tsx       # categorised link list
+│   └── LabClient.tsx       # client — tilt cards + particle canvas experiments
+│
+└── lib/
+    └── config.ts           # feature flags (LAB_ENABLED)
+```
 
-- **React Scripts 5.0** – Modern build configuration
-- **ESLint** – Code quality and consistency
-- **TypeScript** – Type safety and developer experience
+## Animations
 
-### Libraries & Integrations
+All animations are pure CSS and vanilla JS — no libraries.
 
-- **i18next** – Internationalization framework
-- **React Awesome Reveal** – Smooth scroll animations
-- **Typewriter Effect** – Dynamic text animations
+| Effect | Mechanism |
+|---|---|
+| Hero line entrance stagger | CSS keyframes + `--i` custom property delay |
+| Name gradient | `gradient-pan` keyframe, `background-clip: text` |
+| Terminal row cascade | `nth-child` animation delays |
+| Scroll reveal | `IntersectionObserver` → `.revealed` class → CSS transition |
+| Interactive grid | `mousemove` → `--mx`/`--my` CSS vars → `radial-gradient` mask |
 
-## 🎯 Professional Experience Highlights
+## Feature flags
 
-- **Full Stack Developer** at OmniRetail Africa
-  - Built performant applications for thousands of distributors, manufacturers, and retailers
-  - Designed for low-bandwidth and low-spec devices using React Native
-  - Implemented user behavioral analytics through A/B testing
-  - Optimized workflows and database management
+`src/lib/config.ts` controls optional features:
 
-## 💻 Technical Skills
+```ts
+export const LAB_ENABLED = false; // set to true to enable /lab
+```
 
-### Programming Languages
+## Links
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+), TypeScript
-- **Backend:** Node.js, Python, Go
-- **Mobile:** React Native
-
-### Frameworks & Libraries
-
-- **Frontend:** React.js, Vue.js, Next.js
-- **Backend:** Express.js
-- **State Management:** Redux
-- **Styling:** Styled Components, Ant Design, Bootstrap, Material-UI, Tailwind CSS
-
-### Databases & Cloud
-
-- **Databases:** MySQL, MongoDB, PostgreSQL
-- **Cloud Services:** AWS, Firebase
-- **DevOps:** Docker, CI/CD, Git
-
-### Design & Tools
-
-- **Design Tools:** Figma, Adobe XD, Adobe Photoshop, Adobe Illustrator
-- **Version Control:** Git
-- **UI/UX:** User experience design, responsive design principles
-
-## 🎓 Education
-
-- **BE in Information Science**
-- **MS in Information Systems**
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 16+
-- Git
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/knnthgms/neon-swamp.git
-   cd neon-swamp
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-
-   ```bash
-   npm start
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-The application will be available at `http://localhost:3000`
-
-## 🌟 What Makes This Project Special
-
-- **Modern Architecture** – Built with the latest React patterns and hooks
-- **Performance Focused** – Optimized bundle size and loading performance
-- **Accessibility** – WCAG compliant with proper semantic markup
-- **Cross-browser Compatible** – Tested across modern browsers
-- **Mobile First** – Responsive design that works on all devices
-- **Clean Code** – Well-structured, maintainable TypeScript code
-- **Professional Polish** – Production-ready with proper error handling
-
-## 📱 Responsive Design
-
-The website is fully responsive and optimized for:
-
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (320px - 767px)
-
-## 🌍 Internationalization
-
-Currently supports:
-
-- English (en)
-- Spanish (es)
-
-Easily extensible to add more languages through the i18next configuration.
-
-## 🔗 Contact & Links
-
-- **Portfolio:** [https://techbygomes.netlify.app/](https://techbygomes.netlify.app/)
-- **LinkedIn:** [https://linkedin.com/in/knnthgms](https://linkedin.com/in/knnthgms)
-- **GitHub:** [https://github.com/knnthgms](https://github.com/knnthgms)
-- **Email:** knnthgms@gmail.com
-- **Resume:** [Download CV](https://techbygomes.netlify.app/assets/KENNETH_GOMES_CV.pdf)
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Looking for a passionate full-stack developer?** I'm actively seeking new opportunities in frontend development, React development, and full-stack roles. Let's connect and discuss how I can contribute to your team! 🚀
+- LinkedIn: [linkedin.com/in/knnthgms](https://linkedin.com/in/knnthgms)
+- GitHub: [github.com/knnthgms](https://github.com/knnthgms)
+- Email: knnthgms@gmail.com

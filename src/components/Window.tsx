@@ -1,238 +1,181 @@
-import React from "react";
-import styled from "styled-components";
-import Typewriter from "typewriter-effect";
-
-const WindowContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const WindowElement = styled.div`
-  background-color: #2e2e2e;
-  color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  font-family: "Menlo", monospace;
-  flex: 1;
-  margin-top: 10vh;
-`;
-
-const TitleBar = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 9px;
-  background-color: #3b3b3b;
-  color: #aaaaaa;
-  user-select: none;
-`;
-
-const TrafficLights = styled.div`
-  display: flex;
-  gap: 6px;
-`;
-
-const TrafficLight = styled.div<{ color: string }>`
-  width: 12px;
-  height: 12px;
-  background-color: ${({ color }) => color};
-  border-radius: 50%;
-`;
-
-const Content = styled.div`
-  padding: 16px;
-`;
-
-const Line = styled.div<{ indent?: boolean }>`
-  display: flex;
-  align-items: center;
-  margin-left: ${({ indent }) => (indent ? "16px" : "0")};
-`;
-
-const Caret = styled.span`
-  margin-right: 8px;
-  color: #f3f3f3;
-`;
-
-const Key = styled.span`
-  color: #f3f3f3;
-`;
-
-const Link = styled.a`
-  color: #befcae;
-  text-decoration: underline;
-`;
-
-const Value = styled.span`
-  color: #4fc1ff;
-`;
-
-const LineSpacer = styled.div`
-  height: 12px;
-`;
-
-const Window: React.FC = () => {
-  return (
-    <WindowContainer>
-      <WindowElement>
-        <TitleBar>
-          <TrafficLights>
-            <TrafficLight color="#FF605C" />
-            <TrafficLight color="#FFBD44" />
-            <TrafficLight color="#00CA4E" />
-          </TrafficLights>
-        </TitleBar>
-        <Content>
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.currentRole</Key>
-          </Line>
-          <Line indent>
-            <Value>"Senior Software Engineer @ Okta"</Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.experience</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["SE @ Okta", "SMTS @ Aviatrix", "Staff Eng @ OmniRetail", "FE @
-              YouPlus", "SDE @ TotalCloud"]
-            </Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.currentLocation</Key>
-          </Line>
-          <Line indent>
-            <Value>Bangalore, India</Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.contactInfo</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["
-              <Link target="_blank" href="mailto:knnthgms@gmail.com">
-                knnthgms@gmail.com
-              </Link>
-              ", "
-              <Link target="_blank" href="https://linkedin.com/in/knnthgms">
-                LinkedIn
-              </Link>
-              ", "
-              <Link target="_blank" href="https://github.com/knnthgms">
-                Github
-              </Link>
-              "]
-            </Value>
-          </Line>
-          <LineSpacer />
-
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.resume</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              "
-              <Link target="_blank" href="assets/KENNETH_GOMES_CV.pdf">
-                ken_gomes_resume.pdf
-              </Link>
-              "
-            </Value>
-          </Line>
-          <LineSpacer />
-
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.education</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["BE in Information Science", "MSc in Management Information
-              Systems "]
-            </Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.certifications</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["Multicloud Network Associate", "Multicloud Network
-              Professional", "Section x Okta ProfAI: AI Proficiency"]
-            </Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.languages</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["JavaScript (ES2023+)", "TypeScript", "Node.js", "Python", "Go",
-              "C++", "SQL", "HTML5", "CSS3", "SASS"]
-            </Value>
-          </Line>
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.frameworks</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["React", "React Native", "Next.js","Vue.js", "Express", "Redux",
-              "Tailwind CSS", "styled-components"]
-            </Value>
-          </Line>
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.tools</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["Node.js", "Nx", "Vite", "Webpack", "Docker", "Git", "AWS",
-              "Azure DevOps", "AppCenter", "PostgreSQL", "MongoDB"]
-            </Value>
-          </Line>
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.ai</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["Claude Code", "GitHub Copilot", "ChatGPT", "OpenAI API", "prompt
-              engineering"]
-            </Value>
-          </Line>
-          <Line>
-            <Caret>&gt;</Caret> <Key>Ken.design</Key>
-          </Line>
-          <Line indent>
-            <Value>
-              ["Figma", "Antd", "Tailwind CSS", "styled-components", "UI/UX"]
-            </Value>
-          </Line>
-          <LineSpacer />
-          <Line>
-            <Caret>&gt;</Caret>
-            <Typewriter
-              options={{
-                strings: [
-                  "Ken.hobbies",
-                  "Ken.openSourceContributions",
-                  "Ken.currentlyReading",
-                  "Ken.favorites",
-                  "Ken.techPhilosophy",
-                  "Ken.mentorships",
-                  "Ken.sideProjects",
-                  "Ken.weeklyPicks",
-                  "Ken.futureGoals",
-                ],
-                autoStart: true,
-                delay: 35,
-              }}
-            />
-          </Line>
-        </Content>
-      </WindowElement>
-    </WindowContainer>
-  );
+const T = {
+  bg:       "#1a1b26",
+  titlebar: "#16161e",
+  border:   "rgba(187,154,247,0.15)",
+  prompt:   "#565f89",
+  key:      "#c0caf5",
+  str:      "#9ece6a",
+  bracket:  "#bb9af7",
+  amber:    "#e0af68",
+  link:     "#7dcfff",
+  muted:    "#565f89",
 };
 
-export default Window;
+// ─── Syntax primitives ────────────────────────────────────────────────────────
+
+function Prompt() {
+  return <span style={{ color: T.prompt, marginRight: 8 }}>&gt;</span>;
+}
+
+function Key({ children }: { children: string }) {
+  return <span style={{ color: T.key }}>{children}</span>;
+}
+
+function Str({ v }: { v: string }) {
+  return <span style={{ color: T.str }}>&quot;{v}&quot;</span>;
+}
+
+function Arr({ items }: { items: string[] }) {
+  return (
+    <span>
+      <span style={{ color: T.bracket }}>[</span>
+      {items.map((item, i) => (
+        <span key={i}>
+          <span style={{ color: T.amber }}>&quot;{item}&quot;</span>
+          {i < items.length - 1 && <span style={{ color: T.muted }}>, </span>}
+        </span>
+      ))}
+      <span style={{ color: T.bracket }}>]</span>
+    </span>
+  );
+}
+
+function LinkArr({ items }: { items: { label: string; href: string }[] }) {
+  return (
+    <span>
+      <span style={{ color: T.bracket }}>[</span>
+      {items.map((item, i) => (
+        <span key={i}>
+          <span style={{ color: T.amber }}>&quot;</span>
+          <a
+            className="underline"
+            style={{ color: T.link }}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.label}
+          </a>
+          <span style={{ color: T.amber }}>&quot;</span>
+          {i < items.length - 1 && <span style={{ color: T.muted }}>, </span>}
+        </span>
+      ))}
+      <span style={{ color: T.bracket }}>]</span>
+    </span>
+  );
+}
+
+function StrLink({ label, href }: { label: string; href: string }) {
+  return (
+    <span>
+      <span style={{ color: T.amber }}>&quot;</span>
+      <a
+        className="underline"
+        style={{ color: T.link }}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {label}
+      </a>
+      <span style={{ color: T.amber }}>&quot;</span>
+    </span>
+  );
+}
+
+// ─── Layout helpers ───────────────────────────────────────────────────────────
+
+function Row({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <div><Prompt /><Key>{label}</Key></div>
+      <div style={{ paddingLeft: 16 }}>{children}</div>
+    </div>
+  );
+}
+
+function Gap() {
+  return <div style={{ height: 12 }} />;
+}
+
+function TitleBar() {
+  return (
+    <div
+      className="flex items-center gap-1.5 px-3 py-2.5"
+      style={{ background: T.titlebar, borderBottom: `1px solid ${T.border}` }}
+    >
+      <div className="w-3 h-3 rounded-full bg-[#f7768e]" />
+      <div className="w-3 h-3 rounded-full bg-[#e0af68]" />
+      <div className="w-3 h-3 rounded-full bg-[#9ece6a]" />
+    </div>
+  );
+}
+
+// ─── Main component ───────────────────────────────────────────────────────────
+
+export default function Window() {
+  return (
+    <div
+      className="rounded-xl overflow-hidden font-mono text-sm leading-6"
+      style={{
+        background: T.bg,
+        border: `1px solid ${T.border}`,
+        boxShadow: "0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(187,154,247,0.05)",
+      }}
+    >
+      <TitleBar />
+
+      <div className="terminal-body p-5 flex flex-col gap-3">
+        <Row label="Ken.currentRole">
+          <Str v="Senior Software Engineer @ Okta" />
+        </Row>
+
+        <Row label="Ken.experience">
+          <Arr items={["SE @ Okta", "SMTS @ Aviatrix", "Staff Eng @ OmniRetail", "FE @ YouPlus", "SDE @ TotalCloud"]} />
+        </Row>
+
+        <Row label="Ken.currentLocation">
+          <Str v="Bangalore, India" />
+        </Row>
+
+        <Row label="Ken.contactInfo">
+          <LinkArr items={[
+            { label: "knnthgms@gmail.com", href: "mailto:knnthgms@gmail.com" },
+            { label: "LinkedIn",           href: "https://linkedin.com/in/knnthgms" },
+            { label: "Github",             href: "https://github.com/knnthgms" },
+          ]} />
+        </Row>
+
+        <Row label="Ken.resume">
+          <StrLink label="ken_gomes_resume.pdf" href="/assets/KENNETH_GOMES_CV.pdf" />
+        </Row>
+
+        <Row label="Ken.education">
+          <Arr items={["BE in Information Science", "MSc in Management Information Systems"]} />
+        </Row>
+
+        <Row label="Ken.certifications">
+          <Arr items={["Multicloud Network Associate", "Multicloud Network Professional", "Section x Okta ProfAI: AI Proficiency"]} />
+        </Row>
+
+        <Gap />
+
+        <Row label="Ken.languages">
+          <Arr items={["JavaScript (ES2023+)", "TypeScript", "Node.js", "Python", "Go", "C++", "SQL"]} />
+        </Row>
+
+        <Row label="Ken.frameworks">
+          <Arr items={["React", "React Native", "Next.js", "Vue.js", "Express", "Redux", "Tailwind CSS"]} />
+        </Row>
+
+        <Row label="Ken.tools">
+          <Arr items={["Nx", "Vite", "Docker", "Git", "AWS", "Azure DevOps", "PostgreSQL", "MongoDB"]} />
+        </Row>
+
+        <Row label="Ken.ai">
+          <Arr items={["Claude Code", "GitHub Copilot", "ChatGPT", "OpenAI API", "prompt engineering"]} />
+        </Row>
+      </div>
+    </div>
+  );
+}

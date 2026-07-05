@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #080f1e;
+  --color-surface: #0d1b36;
+  --color-heading: #e2e8f0;
+  --color-text: #cbd5e1;
+  --color-muted: #64748b;
+  --color-accent: #2dd4bf;
+  --color-border: rgba(45, 212, 191, 0.08);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Grid lives on html — always the true page background, no z-index tricks */
+html {
+  --mx: 50%;
+  --my: 50%;
+  background-color: #080f1e;
+  background-image:
+    radial-gradient(circle 600px at var(--mx) var(--my), rgba(45, 212, 191, 0.06) 0%, transparent 70%),
+    linear-gradient(rgba(45, 212, 191, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.04) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  background-position: 0 0, -1px -1px, -1px -1px;
+  background-attachment: fixed;
+}
+
+body {
+  color: #cbd5e1;
+}
+
+/* ── Keyframes ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes row-in {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Header entrance */
+.header-enter {
+  animation: fade-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hero text stagger — add .hero-line + style="--i:N" to each line */
+.hero-line {
+  opacity: 0;
+  animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+/* Animated gradient on hero name */
+.hero-name {
+  background: linear-gradient(90deg, #2dd4bf, #7dcfff, #bb9af7, #2dd4bf);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-pan 6s ease infinite;
+}
+
+/* Terminal rows cascade in */
+.terminal-body > div {
+  opacity: 0;
+  animation: row-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.terminal-body > div:nth-child(1)  { animation-delay: 0.30s; }
+.terminal-body > div:nth-child(2)  { animation-delay: 0.42s; }
+.terminal-body > div:nth-child(3)  { animation-delay: 0.54s; }
+.terminal-body > div:nth-child(4)  { animation-delay: 0.66s; }
+.terminal-body > div:nth-child(5)  { animation-delay: 0.78s; }
+.terminal-body > div:nth-child(6)  { animation-delay: 0.90s; }
+.terminal-body > div:nth-child(7)  { animation-delay: 1.02s; }
+.terminal-body > div:nth-child(8)  { animation-delay: 1.10s; }
+.terminal-body > div:nth-child(9)  { animation-delay: 1.18s; }
+.terminal-body > div:nth-child(10) { animation-delay: 1.26s; }
+.terminal-body > div:nth-child(11) { animation-delay: 1.34s; }
+.terminal-body > div:nth-child(12) { animation-delay: 1.42s; }
+
+/* Scroll reveal */
+.reveal-wrap {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+.reveal-wrap.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blog card hover */
+.blog-card {
+  border: 1px solid rgba(45, 212, 191, 0.08);
+  transition: border-color 0.2s ease;
+}
+.blog-card:hover {
+  border-color: rgba(45, 212, 191, 0.22);
+}
+
+/* Links item hover */
+.link-item {
+  border: 1px solid rgba(45, 212, 191, 0.07);
+  transition: border-color 0.2s ease;
+}
+.link-item:hover {
+  border-color: rgba(45, 212, 191, 0.2);
+}
+
+/* Contact card hover */
+.contact-card {
+  border: 1px solid rgba(45, 212, 191, 0.08);
+  transition: border-color 0.2s ease;
+}
+.contact-card:hover {
+  border-color: rgba(45, 212, 191, 0.28);
+}
+.contact-card:hover .contact-arrow {
+  color: #2dd4bf;
+}
+.contact-card:hover .contact-value {
+  color: #cbd5e1;
+}

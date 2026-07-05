@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = { title: "Writing — Ken Gomes" };
 
@@ -40,48 +41,61 @@ const posts = [
 export default function Blog() {
   return (
     <>
-      <h1 className="text-3xl font-bold mb-1" style={{ color: "#e2e8f0" }}>Writing</h1>
-      <p className="mb-12 text-sm" style={{ color: "#475569" }}>
+      <h1
+        className="hero-line text-3xl font-bold mb-1"
+        style={{ "--i": 0, color: "#e2e8f0" } as React.CSSProperties}
+      >
+        Writing
+      </h1>
+      <p
+        className="hero-line mb-12 text-sm"
+        style={{ "--i": 1, color: "#475569" } as React.CSSProperties}
+      >
         Notes on frontend engineering, product thinking, and working in growth tech.
       </p>
+
       <div className="flex flex-col gap-4">
-        {posts.map((post) => (
-          <a
-            key={post.title}
-            href={post.href}
-            className="blog-card block rounded-xl p-6 no-underline"
-            style={{
-              background: "linear-gradient(135deg, rgba(13,27,54,0.7) 0%, rgba(8,15,30,0.5) 100%)",
-            }}
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <span
-                className="text-[0.65rem] font-semibold uppercase tracking-widest px-2 py-0.5 rounded"
-                style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}
-              >
-                {post.tag}
-              </span>
-              <span className="text-xs" style={{ color: "#334155" }}>{post.date}</span>
-              {post.draft && (
+        {posts.map((post, i) => (
+          <Reveal key={post.title} delay={i * 75}>
+            <a
+              href={post.href}
+              className="blog-card block rounded-xl p-6 no-underline"
+              style={{
+                background: "linear-gradient(135deg, rgba(13,27,54,0.7) 0%, rgba(8,15,30,0.5) 100%)",
+              }}
+            >
+              <div className="flex items-center gap-3 mb-3">
                 <span
-                  className="text-[0.65rem] font-semibold px-2 py-0.5 rounded"
-                  style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24" }}
+                  className="text-[0.65rem] font-semibold uppercase tracking-widest px-2 py-0.5 rounded"
+                  style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}
                 >
-                  Draft
+                  {post.tag}
                 </span>
-              )}
-            </div>
-            <h2 className="text-base font-semibold mb-1.5" style={{ color: "#cbd5e1" }}>{post.title}</h2>
-            <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>{post.excerpt}</p>
-          </a>
+                <span className="text-xs" style={{ color: "#334155" }}>{post.date}</span>
+                {post.draft && (
+                  <span
+                    className="text-[0.65rem] font-semibold px-2 py-0.5 rounded"
+                    style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24" }}
+                  >
+                    Draft
+                  </span>
+                )}
+              </div>
+              <h2 className="text-base font-semibold mb-1.5" style={{ color: "#cbd5e1" }}>{post.title}</h2>
+              <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>{post.excerpt}</p>
+            </a>
+          </Reveal>
         ))}
       </div>
-      <p
-        className="mt-12 text-center text-sm rounded-xl py-6"
-        style={{ color: "#334155", border: "1px dashed rgba(45,212,191,0.1)" }}
-      >
-        Posts are in progress — check back soon.
-      </p>
+
+      <Reveal delay={posts.length * 75}>
+        <p
+          className="mt-12 text-center text-sm rounded-xl py-6"
+          style={{ color: "#334155", border: "1px dashed rgba(45,212,191,0.1)" }}
+        >
+          Posts are in progress — check back soon.
+        </p>
+      </Reveal>
     </>
   );
 }

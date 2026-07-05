@@ -4,7 +4,7 @@ import NavLinks from "./NavLinks";
 export default function Header() {
   return (
     <header
-      className="sticky top-0 z-50 w-full"
+      className="header-enter sticky top-0 z-50 w-full"
       style={{
         background: "rgba(8,15,30,0.75)",
         backdropFilter: "blur(16px)",

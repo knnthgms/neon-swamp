@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = { title: "Links — Ken Gomes" };
 
@@ -41,36 +42,50 @@ const sections = [
 export default function Links() {
   return (
     <>
-      <h1 className="text-3xl font-bold mb-1" style={{ color: "#e2e8f0" }}>Links</h1>
-      <p className="mb-12 text-sm" style={{ color: "#475569" }}>
+      <h1
+        className="hero-line text-3xl font-bold mb-1"
+        style={{ "--i": 0, color: "#e2e8f0" } as React.CSSProperties}
+      >
+        Links
+      </h1>
+      <p
+        className="hero-line mb-12 text-sm"
+        style={{ "--i": 1, color: "#475569" } as React.CSSProperties}
+      >
         Things I&apos;m reading, tools I use, and corners of the internet I keep returning to. Updated irregularly.
       </p>
-      {sections.map((section) => (
-        <div key={section.title} className="mb-10">
-          <h2
-            className="text-[0.65rem] font-bold uppercase tracking-widest mb-4"
-            style={{ color: "#1e3a5f", letterSpacing: "0.1em" }}
-          >
-            {section.title}
-          </h2>
-          <div className="flex flex-col gap-1.5">
-            {section.links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-item flex flex-col gap-0.5 px-4 py-3 rounded-lg no-underline"
-                style={{ background: "rgba(13,27,54,0.4)" }}
-              >
-                <span className="text-sm font-medium" style={{ color: "#94a3b8" }}>{link.title}</span>
-                <span className="text-xs" style={{ color: "#334155" }}>{link.desc}</span>
-              </a>
-            ))}
+
+      {sections.map((section, i) => (
+        <Reveal key={section.title} delay={i * 80}>
+          <div className="mb-10">
+            <h2
+              className="text-[0.65rem] font-bold uppercase tracking-widest mb-4"
+              style={{ color: "#1e3a5f", letterSpacing: "0.1em" }}
+            >
+              {section.title}
+            </h2>
+            <div className="flex flex-col gap-1.5">
+              {section.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-item flex flex-col gap-0.5 px-4 py-3 rounded-lg no-underline"
+                  style={{ background: "rgba(13,27,54,0.4)" }}
+                >
+                  <span className="text-sm font-medium" style={{ color: "#94a3b8" }}>{link.title}</span>
+                  <span className="text-xs" style={{ color: "#334155" }}>{link.desc}</span>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       ))}
-      <p className="text-right text-xs mt-8" style={{ color: "#1e3a5f" }}>Last updated June 2025</p>
+
+      <Reveal delay={sections.length * 80}>
+        <p className="text-right text-xs mt-8" style={{ color: "#1e3a5f" }}>Last updated June 2025</p>
+      </Reveal>
     </>
   );
 }

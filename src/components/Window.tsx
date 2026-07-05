@@ -68,7 +68,7 @@ export default function Window() {
         <div className="w-3 h-3 rounded-full bg-[#9ece6a]" />
       </div>
 
-      <div className="p-5 flex flex-col gap-3">
+      <div className="terminal-body p-5 flex flex-col gap-3">
         <Row label="Ken.currentRole">
           <Str v="Senior Software Engineer @ Okta" />
         </Row>

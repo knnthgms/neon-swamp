@@ -17,6 +17,21 @@ html, body {
   color: #cbd5e1;
 }
 
+/* Contact card hover */
+.contact-card {
+  border: 1px solid rgba(45, 212, 191, 0.08);
+  transition: border-color 0.2s ease;
+}
+.contact-card:hover {
+  border-color: rgba(45, 212, 191, 0.28);
+}
+.contact-card:hover .contact-arrow {
+  color: #2dd4bf;
+}
+.contact-card:hover .contact-value {
+  color: #cbd5e1;
+}
+
 /* Interactive grid background */
 .grid-bg {
   position: fixed;

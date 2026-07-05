@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GridBackground from "@/components/GridBackground";
+import ScrollNav from "@/components/ScrollNav";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -25,6 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
+        <GridBackground />
+        <ScrollNav />
         <Header />
         <main className="flex-1 w-full max-w-3xl mx-auto px-5 py-20">
           {children}

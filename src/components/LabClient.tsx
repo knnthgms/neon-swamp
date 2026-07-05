@@ -16,9 +16,9 @@ function TiltCard({ icon, label }: { icon: string; label: string }) {
   }, []);
   const onLeave = useCallback(() => setTransform("perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)"), []);
   return (
-    <div ref={ref} onMouseMove={onMove} onMouseLeave={onLeave} className="aspect-square rounded-xl border border-[rgba(190,252,174,0.15)] flex flex-col items-center justify-center gap-2 cursor-pointer transition-shadow hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-[rgba(190,252,174,0.35)]" style={{ transform, transformStyle: "preserve-3d", willChange: "transform", transition: "box-shadow 0.2s, border-color 0.2s" }}>
+    <div ref={ref} onMouseMove={onMove} onMouseLeave={onLeave} className="aspect-square rounded-xl border border-[rgba(45,212,191,0.1)] flex flex-col items-center justify-center gap-2 cursor-pointer transition-shadow hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-[rgba(45,212,191,0.25)]" style={{ transform, transformStyle: "preserve-3d", willChange: "transform", transition: "box-shadow 0.2s, border-color 0.2s" }}>
       <span className="text-3xl">{icon}</span>
-      <span className="text-[0.7rem] font-semibold text-[#befcae] opacity-70 uppercase tracking-widest">{label}</span>
+      <span className="text-[0.7rem] font-semibold text-[#94a3b8] opacity-70 uppercase tracking-widest">{label}</span>
     </div>
   );
 }
@@ -56,11 +56,11 @@ function ParticleCanvas() {
         p.vx *= 0.98; p.vy *= 0.98; p.x += p.vx; p.y += p.vy;
         if (p.x < 0) p.x = W; if (p.x > W) p.x = 0; if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
         ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(190,252,174,${p.alpha})`; ctx.fill();
+        ctx.fillStyle = `rgba(45,212,191,${p.alpha})`; ctx.fill();
       }
       for (let i = 0; i < ps.length; i++) for (let j = i + 1; j < ps.length; j++) {
         const dx = ps[i].x - ps[j].x, dy = ps[i].y - ps[j].y, d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 90) { ctx.beginPath(); ctx.moveTo(ps[i].x, ps[i].y); ctx.lineTo(ps[j].x, ps[j].y); ctx.strokeStyle = `rgba(190,252,174,${(1 - d / 90) * 0.2})`; ctx.lineWidth = 0.8; ctx.stroke(); }
+        if (d < 90) { ctx.beginPath(); ctx.moveTo(ps[i].x, ps[i].y); ctx.lineTo(ps[j].x, ps[j].y); ctx.strokeStyle = `rgba(45,212,191,${(1 - d / 90) * 0.2})`; ctx.lineWidth = 0.8; ctx.stroke(); }
       }
       rafRef.current = requestAnimationFrame(draw);
     };
@@ -68,7 +68,7 @@ function ParticleCanvas() {
     return () => { canvas.removeEventListener("mousemove", onMove); cancelAnimationFrame(rafRef.current); };
   }, []);
 
-  return <canvas ref={canvasRef} className="block w-full rounded-lg bg-[#0d1a1b]" />;
+  return <canvas ref={canvasRef} className="block w-full rounded-lg bg-[#0d1b36]" />;
 }
 
 function TiltCardsGrid() {
@@ -84,10 +84,10 @@ export default function LabClient() {
   return (
     <div className="flex flex-col gap-8">
       {experiments.map((exp) => (
-        <div key={exp.name} className="border border-[rgba(190,252,174,0.12)] rounded-xl overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-[rgba(190,252,174,0.08)]">
-            <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#befcae] opacity-60">{exp.name}</span>
-            <span className="text-[0.65rem] px-2 py-0.5 rounded bg-[rgba(190,252,174,0.1)] text-[#befcae]">{exp.tech}</span>
+        <div key={exp.name} className="border border-[rgba(45,212,191,0.1)] rounded-xl overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-[rgba(45,212,191,0.06)]">
+            <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#94a3b8] opacity-60">{exp.name}</span>
+            <span className="text-[0.65rem] px-2 py-0.5 rounded bg-[rgba(45,212,191,0.08)] text-[#94a3b8]">{exp.tech}</span>
           </div>
           <div className="p-8 min-h-[180px] flex items-center justify-center">{exp.component}</div>
         </div>

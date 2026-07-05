@@ -41,32 +41,41 @@ const sections = [
 export default function Links() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-[#befcae] mb-1">Links</h1>
-      <p className="text-[#abe39d] mb-12 text-sm">
+      <h1 className="text-3xl font-bold mb-1" style={{ color: "#e2e8f0" }}>Links</h1>
+      <p className="mb-12 text-sm" style={{ color: "#475569" }}>
         Things I&apos;m reading, tools I use, and corners of the internet I keep returning to. Updated irregularly.
       </p>
       {sections.map((section) => (
         <div key={section.title} className="mb-10">
-          <h2 className="text-[0.7rem] font-bold uppercase tracking-widest text-[#befcae] opacity-50 mb-4">
+          <h2
+            className="text-[0.65rem] font-bold uppercase tracking-widest mb-4"
+            style={{ color: "#1e3a5f", letterSpacing: "0.1em" }}
+          >
             {section.title}
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5">
             {section.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col gap-0.5 px-4 py-3 rounded-lg border border-[rgba(190,252,174,0.1)] no-underline transition-colors hover:border-[rgba(190,252,174,0.3)] hover:bg-[rgba(190,252,174,0.04)]"
+                className="flex flex-col gap-0.5 px-4 py-3 rounded-lg no-underline transition-all"
+                style={{
+                  background: "rgba(13,27,54,0.4)",
+                  border: "1px solid rgba(45,212,191,0.07)",
+                }}
+                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.2)")}
+                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.07)")}
               >
-                <span className="text-sm font-medium text-[#befcae]">{link.title}</span>
-                <span className="text-xs text-[#abe39d] opacity-65">{link.desc}</span>
+                <span className="text-sm font-medium" style={{ color: "#94a3b8" }}>{link.title}</span>
+                <span className="text-xs" style={{ color: "#334155" }}>{link.desc}</span>
               </a>
             ))}
           </div>
         </div>
       ))}
-      <p className="text-right text-xs text-[#abe39d] opacity-40 mt-8">Last updated June 2025</p>
+      <p className="text-right text-xs mt-8" style={{ color: "#1e3a5f" }}>Last updated June 2025</p>
     </>
   );
 }

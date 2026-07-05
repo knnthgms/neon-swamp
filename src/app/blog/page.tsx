@@ -40,34 +40,49 @@ const posts = [
 export default function Blog() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-[#befcae] mb-1">Writing</h1>
-      <p className="text-[#abe39d] mb-12 text-sm">
+      <h1 className="text-3xl font-bold mb-1" style={{ color: "#e2e8f0" }}>Writing</h1>
+      <p className="mb-12 text-sm" style={{ color: "#475569" }}>
         Notes on frontend engineering, product thinking, and working in growth tech.
       </p>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         {posts.map((post) => (
           <a
             key={post.title}
             href={post.href}
-            className="block border border-[rgba(190,252,174,0.12)] rounded-xl p-6 no-underline transition-colors hover:border-[rgba(190,252,174,0.35)] hover:bg-[rgba(190,252,174,0.04)]"
+            className="block rounded-xl p-6 no-underline transition-all"
+            style={{
+              background: "linear-gradient(135deg, rgba(13,27,54,0.7) 0%, rgba(8,15,30,0.5) 100%)",
+              border: "1px solid rgba(45,212,191,0.08)",
+            }}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.22)")}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.08)")}
           >
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-[0.7rem] font-semibold uppercase tracking-widest px-2 py-0.5 rounded bg-[rgba(190,252,174,0.12)] text-[#befcae]">
+            <div className="flex items-center gap-3 mb-3">
+              <span
+                className="text-[0.65rem] font-semibold uppercase tracking-widest px-2 py-0.5 rounded"
+                style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}
+              >
                 {post.tag}
               </span>
-              <span className="text-xs text-[#abe39d] opacity-60">{post.date}</span>
+              <span className="text-xs" style={{ color: "#334155" }}>{post.date}</span>
               {post.draft && (
-                <span className="text-[0.7rem] font-semibold px-2 py-0.5 rounded bg-[rgba(255,189,68,0.15)] text-[#ffbd44]">
+                <span
+                  className="text-[0.65rem] font-semibold px-2 py-0.5 rounded"
+                  style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24" }}
+                >
                   Draft
                 </span>
               )}
             </div>
-            <h2 className="text-base font-semibold text-[#befcae] mb-1">{post.title}</h2>
-            <p className="text-sm text-[#abe39d] leading-relaxed opacity-80">{post.excerpt}</p>
+            <h2 className="text-base font-semibold mb-1.5" style={{ color: "#cbd5e1" }}>{post.title}</h2>
+            <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>{post.excerpt}</p>
           </a>
         ))}
       </div>
-      <p className="mt-12 text-center text-sm text-[#abe39d] opacity-50 border border-dashed border-[rgba(190,252,174,0.2)] rounded-xl py-6">
+      <p
+        className="mt-12 text-center text-sm rounded-xl py-6"
+        style={{ color: "#334155", border: "1px dashed rgba(45,212,191,0.1)" }}
+      >
         Posts are in progress — check back soon.
       </p>
     </>

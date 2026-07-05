@@ -49,13 +49,10 @@ export default function Blog() {
           <a
             key={post.title}
             href={post.href}
-            className="block rounded-xl p-6 no-underline transition-all"
+            className="blog-card block rounded-xl p-6 no-underline"
             style={{
               background: "linear-gradient(135deg, rgba(13,27,54,0.7) 0%, rgba(8,15,30,0.5) 100%)",
-              border: "1px solid rgba(45,212,191,0.08)",
             }}
-            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.22)")}
-            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.08)")}
           >
             <div className="flex items-center gap-3 mb-3">
               <span

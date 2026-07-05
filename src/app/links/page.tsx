@@ -60,13 +60,8 @@ export default function Links() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col gap-0.5 px-4 py-3 rounded-lg no-underline transition-all"
-                style={{
-                  background: "rgba(13,27,54,0.4)",
-                  border: "1px solid rgba(45,212,191,0.07)",
-                }}
-                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.2)")}
-                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = "rgba(45,212,191,0.07)")}
+                className="link-item flex flex-col gap-0.5 px-4 py-3 rounded-lg no-underline"
+                style={{ background: "rgba(13,27,54,0.4)" }}
               >
                 <span className="text-sm font-medium" style={{ color: "#94a3b8" }}>{link.title}</span>
                 <span className="text-xs" style={{ color: "#334155" }}>{link.desc}</span>

@@ -12,17 +12,18 @@ export default function AboutSection() {
         className="hero-line text-lg leading-relaxed"
         style={{ "--i": 1, color: "#94a3b8" } as React.CSSProperties}
       >
-        Product-minded Senior Software Engineer with 6+ years building MVPs and scaling product
-        foundations at high-growth startups.
+        Product-minded Senior Software Engineer with 8+ years building enterprise-grade products
+        and scaling product foundations across startups and large-scale platforms.
       </p>
 
       <p
         className="hero-line leading-relaxed"
         style={{ "--i": 2, color: "#64748b" } as React.CSSProperties}
       >
-        Currently at Okta, building identity and security products used by millions. Previously at
-        Aviatrix, contributing to multi-cloud networking and security — and before that, leading
-        frontend initiatives at OmniRetail across markets in Africa, where I owned everything from
+        Currently at Okta, building identity and access management products used by thousands of
+        organizations worldwide. Previously at Aviatrix, building the Copilot platform UI on a
+        Node.js BFF and evolving the internal design system — and before that, leading frontend
+        initiatives at OmniRetail across markets in Africa, where I owned everything from
         design-system work to behavioral analytics and A/B testing that drove real growth.
       </p>
 
@@ -30,9 +31,9 @@ export default function AboutSection() {
         className="hero-line leading-relaxed"
         style={{ "--i": 3, color: "#64748b" } as React.CSSProperties}
       >
-        Comfortable across the stack. Work closely with product, design, and growth teams. I care
-        about clean architecture, delightful UX, and making data legible to the humans who need it
-        most.
+        Comfortable across the stack, I operate at the intersection of engineering quality and
+        product thinking — working closely with product, design, and growth teams. I care about
+        clean architecture, delightful UX, and making data legible to the humans who need it most.
       </p>
     </section>
   );

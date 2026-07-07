@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ken Gomes",
   description:
-    "Senior Software Engineer — building identity and security products at Okta.",
+    "Senior Software Engineer — building identity and access management products at Okta.",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     title: "Ken Gomes",
     description:
-      "Senior Software Engineer — building identity and security products at Okta.",
+      "Senior Software Engineer — building identity and access management products at Okta.",
     url: "https://kengomes.pages.dev",
     siteName: "Ken Gomes",
   },

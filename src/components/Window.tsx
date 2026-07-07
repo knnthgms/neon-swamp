@@ -155,13 +155,13 @@ export default function Window() {
         </Row>
 
         <Row label="Ken.certifications">
-          <Arr items={["Multicloud Network Associate", "Multicloud Network Professional", "Section x Okta ProfAI: AI Proficiency"]} />
+          <Arr items={["Section x Okta ProfAI: AI Proficiency", "Multicloud Network Associate", "Multicloud Network Professional"]} />
         </Row>
 
         <Gap />
 
         <Row label="Ken.languages">
-          <Arr items={["JavaScript (ES2023+)", "TypeScript", "Node.js", "Python", "Go", "C++", "SQL"]} />
+          <Arr items={["JavaScript (ES2023+)", "TypeScript", "Node.js", "Java", "Python", "Go", "C++", "SQL"]} />
         </Row>
 
         <Row label="Ken.frameworks">

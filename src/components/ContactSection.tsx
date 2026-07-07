@@ -63,6 +63,7 @@ function ContactCard({ label, value, href, desc, external }: ContactLink) {
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      aria-label={`${label}: ${value} — ${desc}${external ? " (opens in new tab)" : ""}`}
       className="contact-card group flex items-center justify-between px-5 py-4 rounded-xl no-underline"
       style={{
         background: "linear-gradient(135deg, rgba(13,27,54,0.6) 0%, rgba(8,15,30,0.4) 100%)",

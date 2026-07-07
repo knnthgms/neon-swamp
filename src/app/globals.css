@@ -133,3 +133,34 @@ body {
 .contact-card:hover .contact-value {
   color: #cbd5e1;
 }
+
+/* Nav link hover */
+.nav-link:hover {
+  color: #94a3b8 !important;
+}
+
+/* Skip to main content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #2dd4bf;
+  color: #080f1e;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus-visible ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 3px;
+  border-radius: 4px;
+}

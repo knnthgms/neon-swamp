@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { LAB_ENABLED } from "@/lib/config";
@@ -15,26 +16,29 @@ export default function NavLinks() {
   const router = useRouter();
 
   const navigate = useCallback(
-    (href: string) => {
-      if (!("startViewTransition" in document)) { router.push(href); return; }
+    (href: string, e: React.MouseEvent) => {
+      if (!("startViewTransition" in document)) return;
+      e.preventDefault();
       (document as any).startViewTransition(() => router.push(href));
     },
     [router]
   );
 
   return (
-    <nav className="flex items-center gap-1">
+    <nav aria-label="Main navigation" className="flex items-center gap-1">
       {NAV.map(({ label, href }) => {
         const isActive = pathname.startsWith(href);
         return (
-          <button
+          <Link
             key={href}
-            onClick={() => navigate(href)}
-            className="px-3 py-1.5 rounded-md text-sm cursor-pointer bg-transparent border-0 transition-colors"
+            href={href}
+            onClick={(e) => navigate(href, e)}
+            aria-current={isActive ? "page" : undefined}
+            className="nav-link px-3 py-1.5 rounded-md text-sm no-underline transition-colors"
             style={{ color: isActive ? "#2dd4bf" : "#475569", fontWeight: isActive ? 500 : 400 }}
           >
             {label}
-          </button>
+          </Link>
         );
       })}
     </nav>

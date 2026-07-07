@@ -1,8 +1,8 @@
 # neon-swamp
 
-Personal site for [Ken Gomes](https://techbygomes.netlify.app) — built with Next.js 16, Tailwind CSS v4, and no animation libraries.
+Personal site for [Ken Gomes](https://kengomes.pages.dev) — built with Next.js 16, Tailwind CSS v4, and no animation libraries.
 
-**Live:** https://techbygomes.netlify.app
+**Live:** https://kengomes.pages.dev
 
 ## Stack
 
@@ -55,13 +55,13 @@ src/
 
 All animations are pure CSS and vanilla JS — no libraries.
 
-| Effect | Mechanism |
-|---|---|
-| Hero line entrance stagger | CSS keyframes + `--i` custom property delay |
-| Name gradient | `gradient-pan` keyframe, `background-clip: text` |
-| Terminal row cascade | `nth-child` animation delays |
-| Scroll reveal | `IntersectionObserver` → `.revealed` class → CSS transition |
-| Interactive grid | `mousemove` → `--mx`/`--my` CSS vars → `radial-gradient` mask |
+| Effect                     | Mechanism                                                     |
+| -------------------------- | ------------------------------------------------------------- |
+| Hero line entrance stagger | CSS keyframes + `--i` custom property delay                   |
+| Name gradient              | `gradient-pan` keyframe, `background-clip: text`              |
+| Terminal row cascade       | `nth-child` animation delays                                  |
+| Scroll reveal              | `IntersectionObserver` → `.revealed` class → CSS transition   |
+| Interactive grid           | `mousemove` → `--mx`/`--my` CSS vars → `radial-gradient` mask |
 
 ## Feature flags
 

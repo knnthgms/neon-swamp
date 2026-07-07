@@ -31,13 +31,14 @@ export default function ScrollNav() {
   if (pathname !== "/") return null;
 
   return (
-    <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-5">
+    <nav aria-label="Page sections" className="fixed left-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-5">
       {SECTIONS.map(({ id, label }) => {
         const isActive = active === id;
         return (
           <button
             key={id}
             onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
+            aria-label={`Jump to ${label} section`}
             className="flex items-center gap-3 group cursor-pointer bg-transparent border-0 p-0"
           >
             <div style={{

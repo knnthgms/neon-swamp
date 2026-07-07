@@ -52,13 +52,15 @@ export default function Blog() {
         subtitle="Notes on frontend engineering, product thinking, and working in growth tech."
       />
 
-      <div className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-4 list-none p-0 m-0">
         {posts.map((post, i) => (
-          <Reveal key={post.title} delay={i * 75}>
-            <PostCard {...post} />
-          </Reveal>
+          <li key={post.title}>
+            <Reveal delay={i * 75}>
+              <PostCard {...post} />
+            </Reveal>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <Reveal delay={posts.length * 75}>
         <p

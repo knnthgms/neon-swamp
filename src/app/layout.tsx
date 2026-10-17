@@ -6,36 +6,43 @@ import Footer from "@/components/Footer";
 import GridBackground from "@/components/GridBackground";
 import ScrollNav from "@/components/ScrollNav";
 import Analytics from "@/components/Analytics";
+import { AUTHOR, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+// Only the stack terminal uses mono, so keep it off the critical path.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
-  title: "Ken Gomes",
-  description:
-    "Senior Software Engineer — building identity and access management products at Okta.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    title: "Ken Gomes",
-    description:
-      "Senior Software Engineer — building identity and access management products at Okta.",
-    url: "https://kengomes.pages.dev",
-    siteName: "Ken Gomes",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ken Gomes",
+  name: AUTHOR.name,
   jobTitle: "Senior Software Engineer",
   worksFor: { "@type": "Organization", name: "Okta" },
-  url: "https://kengomes.pages.dev",
-  sameAs: ["https://linkedin.com/in/knnthgms", "https://github.com/knnthgms"],
+  url: SITE_URL,
+  sameAs: AUTHOR.sameAs,
   knowsAbout: [
     "React",
     "TypeScript",
@@ -59,6 +66,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Writing`} href="/feed.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

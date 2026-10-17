@@ -1,0 +1,41 @@
+name: Publish Scheduled Posts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # runs daily at midnight UTC
+  workflow_dispatch:        # allow manual trigger from GitHub Actions tab
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for posts scheduled for today
+        id: check
+        run: |
+          TODAY=$(date -u +"%Y-%m-%d")
+          SHOULD_DEPLOY="false"
+
+          if [ -d "content/posts" ]; then
+            for file in content/posts/*.md; do
+              [ -f "$file" ] || continue
+
+              PUBLISH_DATE=$(awk '/^publishDate:/{gsub(/["\047]/, "", $2); print $2}' "$file")
+              DRAFT=$(awk '/^draft:/{print $2}' "$file")
+
+              if [ "$DRAFT" = "false" ] && [ "$PUBLISH_DATE" = "$TODAY" ]; then
+                echo "Triggering deploy for: $file (publishDate: $PUBLISH_DATE)"
+                SHOULD_DEPLOY="true"
+              fi
+            done
+          fi
+
+          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Cloudflare Pages deploy
+        if: steps.check.outputs.should_deploy == 'true'
+        run: |
+          curl -sS --fail -X POST "${{ secrets.DEPLOY_HOOK_URL }}"
+          echo "Deploy triggered."

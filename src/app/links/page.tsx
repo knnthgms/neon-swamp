@@ -3,7 +3,11 @@ import Reveal from "@/components/Reveal";
 import PageHeader from "@/components/PageHeader";
 import LinkGroup, { type LinkGroupProps } from "@/components/LinkGroup";
 
-export const metadata: Metadata = { title: "Links — Ken Gomes" };
+export const metadata: Metadata = {
+  title: "Links — Ken Gomes",
+  description: "Things Ken Gomes is reading, tools he uses, and corners of the internet worth returning to.",
+  alternates: { canonical: "/links" },
+};
 
 const sections: LinkGroupProps[] = [
   {

@@ -63,6 +63,40 @@ All animations are pure CSS and vanilla JS — no libraries.
 | Scroll reveal              | `IntersectionObserver` → `.revealed` class → CSS transition   |
 | Interactive grid           | `mousemove` → `--mx`/`--my` CSS vars → `radial-gradient` mask |
 
+## Writing posts
+
+Posts live in `content/posts/` as Markdown with frontmatter:
+
+```md
+---
+slug: my-post
+title: "My Post"
+excerpt: "One-line summary shown on the blog list."
+tag: Frontend
+publishDate: "2026-11-15"
+draft: false
+---
+
+Post body in Markdown...
+```
+
+- **Live:** `draft: false` and `publishDate` today or earlier. Linked from `/blog`, readable at `/blog/<slug>`
+- **Scheduled:** `publishDate` in the future. Shown on `/blog` as a teaser, and `/blog/<slug>` returns a 404
+- **Draft:** `draft: true`. Shown as a teaser with a Draft badge
+
+The site is static, so a scheduled post goes live on the next build after its date. `.github/workflows/publish-posts.yml` runs daily at 00:00 UTC. If any post's `publishDate` is today, it triggers a Cloudflare Pages rebuild through a deploy hook stored in the `DEPLOY_HOOK_URL` repository secret.
+
+## SEO
+
+Generated at build time from the posts and `src/lib/site.ts`:
+
+- `/sitemap.xml` and `/robots.txt`
+- `/feed.xml`: RSS with full post content, advertised in every page's `<head>`
+- Per-post Open Graph and Twitter metadata, canonical URLs, and `BlogPosting` JSON-LD
+- Social preview images at `/opengraph-image` and `/blog/<slug>/opengraph-image`
+
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://kengomes.dev`) when moving to a custom domain. All of the above follow it. The default is `https://kengomes.pages.dev`.
+
 ## Feature flags
 
 `src/lib/config.ts` controls optional features:

@@ -60,6 +60,15 @@ export function getPublishedPosts(): PostMeta[] {
   return getBlogListPosts().filter((p) => isLive(p));
 }
 
+// Static export fails the build if a dynamic route has zero params, which happens
+// until the first post goes live. The placeholder renders as a 404 page.
+export const PLACEHOLDER_SLUG = "_placeholder";
+
+export function getPostStaticParams() {
+  const slugs = getPublishedPosts().map((p) => ({ slug: p.slug }));
+  return slugs.length ? slugs : [{ slug: PLACEHOLDER_SLUG }];
+}
+
 export function getPostBySlug(slug: string): Post | null {
   return getAllPosts().find((p) => p.slug === slug) ?? null;
 }

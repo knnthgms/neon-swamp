@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { getPostBySlug, getPublishedPosts, isLive } from "@/lib/posts";
+import { getPostBySlug, getPostStaticParams, isLive } from "@/lib/posts";
 import { AUTHOR, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -11,7 +11,7 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return getPublishedPosts().map((p) => ({ slug: p.slug }));
+  return getPostStaticParams();
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

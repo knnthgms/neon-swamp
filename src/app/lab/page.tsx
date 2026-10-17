@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import LabClient from "@/components/LabClient";
 import Reveal from "@/components/Reveal";
 import PageHeader from "@/components/PageHeader";
@@ -8,7 +8,7 @@ import { LAB_ENABLED } from "@/lib/config";
 export const metadata: Metadata = { title: "Lab — Ken Gomes" };
 
 export default function Lab() {
-  if (!LAB_ENABLED) redirect("/");
+  if (!LAB_ENABLED) notFound();
 
   return (
     <>

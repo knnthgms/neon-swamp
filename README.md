@@ -16,8 +16,21 @@ Personal site for [Ken Gomes](https://kengomes.pages.dev) — built with Next.js
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # production build
+npm run build      # static export to out/
+npx wrangler pages dev out   # serve out/ the way Cloudflare Pages does
 ```
+
+## Deploying
+
+The site is a static export (`output: "export"`). Cloudflare Pages build settings:
+
+| Setting | Value |
+|---|---|
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+
+`public/_headers` sets content types that Cloudflare can't infer, such as the extensionless social preview images.
 
 ## Project structure
 

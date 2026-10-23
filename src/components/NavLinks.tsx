@@ -6,6 +6,7 @@ import { useCallback } from "react";
 import { LAB_ENABLED } from "@/lib/config";
 
 const NAV = [
+  { label: "Projects", href: "/projects" },
   { label: "Blog",  href: "/blog" },
   { label: "Links", href: "/links" },
   ...(LAB_ENABLED ? [{ label: "Lab", href: "/lab" }] : []),

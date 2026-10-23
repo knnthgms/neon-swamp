@@ -4,6 +4,8 @@ Personal site for [Ken Gomes](https://kengomes.pages.dev) — built with Next.js
 
 **Live:** https://kengomes.pages.dev
 
+![Home page of kengomes.pages.dev](docs/screenshot.jpg)
+
 ## Stack
 
 - **Next.js 16** — App Router, Turbopack, maximised server rendering

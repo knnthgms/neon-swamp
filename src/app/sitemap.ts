@@ -6,7 +6,7 @@ import { LAB_ENABLED } from "@/lib/config";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/blog", "/links", ...(LAB_ENABLED ? ["/lab"] : [])].map((path) => ({
+  const pages = ["", "/projects", "/blog", "/links", ...(LAB_ENABLED ? ["/lab"] : [])].map((path) => ({
     url: `${SITE_URL}${path}`,
   }));
 
